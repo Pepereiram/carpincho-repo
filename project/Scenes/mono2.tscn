@@ -5,6 +5,7 @@
 [sub_resource type="CapsuleShape2D" id=1]
 
 [node name="KinematicBody2D2" type="KinematicBody2D"]
+collision_layer = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
