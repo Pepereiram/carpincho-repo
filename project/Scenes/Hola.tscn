@@ -10,7 +10,7 @@
 [node name="Hola" type="Node2D"]
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 140, 29 )
+position = Vector2( 57, 88 )
 script = ExtResource( 4 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -18,16 +18,14 @@ script = ExtResource( 4 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground"]
 
 [node name="SunnyCloudBackground" type="Sprite" parent="ParallaxBackground/Sprite"]
-position = Vector2( 236, 39 )
-scale = Vector2( 0.3, 0.3 )
+position = Vector2( 291, 148 )
+scale = Vector2( 0.311979, 0.277778 )
 texture = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="TileMap" parent="." instance=ExtResource( 3 )]
-tile_data = PoolIntArray( 196611, 0, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 2, 0, 262147, 7, 0, 262148, 8, 0, 262149, 8, 0, 262150, 8, 0, 262151, 3, 0, 327683, 6, 0, 327684, 5, 0, 327685, 5, 0, 327686, 5, 0, 327687, 4, 0 )
+position = Vector2( 79, 95 )
+tile_data = PoolIntArray( -131075, 0, 0, -131074, 1, 0, -131073, 1, 0, -196608, 1, 0, -196607, 1, 0, -196606, 1, 0, -196605, 1, 0, -196604, 1, 0, -196603, 1, 0, -196602, 1, 0, -196601, 1, 0, -196600, 1, 0, -196599, 2, 0, -65539, 7, 0, -131063, 3, 0, -3, 7, 0, -65527, 3, 0, 65533, 7, 0, 9, 3, 0, 131069, 7, 0, 131070, 1, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 3, 0, 196605, 7, 0, 196606, 8, 0, 196607, 8, 0, 131072, 8, 0, 131073, 8, 0, 131074, 8, 0, 131075, 8, 0, 131076, 8, 0, 131077, 8, 0, 131078, 8, 0, 131079, 8, 0, 131080, 8, 0, 131081, 3, 0, 262141, 6, 0, 262142, 5, 0, 262143, 5, 0, 196608, 5, 0, 196609, 5, 0, 196610, 5, 0, 196611, 5, 0, 196612, 5, 0, 196613, 5, 0, 196614, 5, 0, 196615, 5, 0, 196616, 5, 0, 196617, 4, 0 )
 
 [node name="KinematicBody2D2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 206, 21 )
+position = Vector2( 326, 83 )
 script = ExtResource( 6 )

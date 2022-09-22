@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sunny Cloud Background.png-68e09e653dd1bf859160325995a3f22c.stex"
+path="res://.import/icon.png-9a25435582839ca3cd8bb514b597c2d9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Sunny Cloud Background.png"
-dest_files=[ "res://.import/Sunny Cloud Background.png-68e09e653dd1bf859160325995a3f22c.stex" ]
+source_file="res://assets/sprites/icon.png"
+dest_files=[ "res://.import/icon.png-9a25435582839ca3cd8bb514b597c2d9.stex" ]
 
 [params]
 
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
