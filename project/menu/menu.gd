@@ -9,7 +9,7 @@ func _ready():
 	
 	
 func _on_play_pressed():
-	get_tree().change_scene("res://Scenes/Hola.tscn")	
+	get_tree().change_scene("res://Scenes/Levels/testLevel/testScene.tscn")	
 	
 func _on_exit_pressed():	
 	get_tree().quit()
