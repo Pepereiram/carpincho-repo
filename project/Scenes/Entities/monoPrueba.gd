@@ -5,6 +5,8 @@ var velocity = Vector2()
 var SPEED = 200
 var ACCELERATION = 100
 var GRAVITY = 10
+var JUMP_SPEED = 200
+
 onready var pivot = $Pivot
 
 
@@ -28,6 +30,10 @@ func _physics_process(delta):
 	velocity.y += GRAVITY
 	if is_on_floor():
 		velocity.y = 0
+	#jumping:
+	if is_on_floor() and Input.is_action_just_pressed("move_up"):
+		velocity.y = -JUMP_SPEED
+	
 		
 	#rotar sprite hacia los lados
 	if Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left"):
