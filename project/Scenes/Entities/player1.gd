@@ -6,9 +6,14 @@ var SPEED = 200
 var ACCELERATION = 100
 var GRAVITY = 10
 var JUMP_SPEED = 200
+onready var anim_player = $Animation
+onready var anim_tree = $AnimationTree
+onready var playback = anim_tree.get("parameters/playback")
 
 onready var pivot = $Pivot
 
+func _ready():
+	anim_tree.active = true
 
 #Variables caña
 onready var Tip = $Punta
@@ -47,6 +52,27 @@ func _physics_process(delta):
 			shoot()    
 		else:
 			retrieve()
+	
+	# ------- Animations ------------
+	"""
+	if Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left"):
+		pivot.scale.x = 1
+	if Input.is_action_pressed("move_left") and not Input.is_action_pressed("move_right"):
+		pivot.scale.x = -1
+	"""
+	if is_on_floor():
+		if abs(velocity.x) > 0:
+			playback.travel("run")
+		else:
+			playback.travel("idle")
+	else:
+		if velocity.y > 0:
+			playback.travel("jump_asc")
+		elif velocity.y < 0:
+			playback.travel("jump_fall")
+	
+	
+		
 
 #Jugador lanza la punta
 func shoot():
