@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/charlieTheCapybaraAnimationSheet.png-1770515d3c7b6ea4eeb1da5cabdb2d99.stex"
+path="res://.import/parallax-space-backgound.png-0644f23e2be25e8d797bbd8111f983b0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/capibara/charlieTheCapybaraAnimationSheet.png"
-dest_files=[ "res://.import/charlieTheCapybaraAnimationSheet.png-1770515d3c7b6ea4eeb1da5cabdb2d99.stex" ]
+source_file="res://assets/sprites/parallax-space-backgound.png"
+dest_files=[ "res://.import/parallax-space-backgound.png-0644f23e2be25e8d797bbd8111f983b0.stex" ]
 
 [params]
 
