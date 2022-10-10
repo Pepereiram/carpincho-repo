@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://menu/menu.gd" type="Script" id=1]
 [ext_resource path="res://menu/theme.tres" type="Theme" id=2]
 [ext_resource path="res://menu/FatPix-SVG.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/sprites/Sky-layer.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/capibara/charlieTheCapybaraAnimationSheet.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=3]
 
@@ -10,8 +12,8 @@
 default_font = SubResource( 3 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 23
-outline_size = 2
+size = 22
+outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
 
@@ -41,21 +43,36 @@ margin_bottom = 24.0
 theme = ExtResource( 2 )
 text = "Carpincho"
 align = 1
+valign = 1
 max_lines_visible = 10
 
 [node name="play" type="Button" parent="VBoxContainer"]
 margin_top = 28.0
 margin_right = 350.0
-margin_bottom = 58.0
+margin_bottom = 57.0
 rect_pivot_offset = Vector2( -236, -27 )
 theme = SubResource( 2 )
 text = "Play"
 
 [node name="exit" type="Button" parent="VBoxContainer"]
-margin_top = 62.0
+margin_top = 61.0
 margin_right = 350.0
-margin_bottom = 92.0
+margin_bottom = 91.0
 theme = ExtResource( 2 )
 text = "Exit"
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.513726, 0.494118, 0.494118, 1 )
+position = Vector2( 199.25, 98 )
+scale = Vector2( 3.57589, 0.901786 )
+z_index = -1
+texture = ExtResource( 4 )
+
+[node name="CharlieTheCapybaraAnimationSheet" type="Sprite" parent="."]
+position = Vector2( 300, 152 )
+scale = Vector2( 1.03819, 1 )
+texture = ExtResource( 5 )
+vframes = 9
+frame = 1
 
 [connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]
