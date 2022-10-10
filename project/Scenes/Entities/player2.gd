@@ -9,6 +9,15 @@ var JUMP_SPEED = 200
 #orientacion
 onready var pivot = $Pivot
 
+#Variables caña
+onready var Tip = $Punta
+onready var tip_spawn = $Pivot/spawnBala
+onready var shoot_direction = $Pivot/direccion2
+var tip_attached = true #es un estado
+
+func _process(delta):
+	if tip_attached == true: #jugador no ha lanzado la punta
+		Tip.global_position = tip_spawn.global_position #punta se mantiene en spawn  
 
 func _physics_process(delta):
 	move_and_slide(velocity, Vector2.UP)
@@ -26,3 +35,30 @@ func _physics_process(delta):
 			pivot.scale.x = 1
 	if Input.is_action_pressed("move_left2") and not Input.is_action_pressed("move_right"):
 			pivot.scale.x = -1	
+		#acciones con la ""caña""
+	if Input.is_action_just_pressed("lanzar2"):
+		if tip_attached == true:
+			shoot()    
+		else:
+			retrieve()		
+			
+#Jugador lanza la punta
+func shoot():
+	tip_attached = false
+	Tip.set_retrieved(false)
+	self.remove_child(Tip) #punta deja de ser hija del jugador
+	get_parent().add_child(Tip) #punta es hija del escenario
+	Tip.global_position = tip_spawn.global_position #punta se posiciona en su spawn   
+	Tip.launch(shoot_direction.global_position) #punta se lanza en direccion a la mira
+			
+#Punta se devuelve hacia el jugador
+func retrieve():
+	var self_x = abs(Tip.global_position.x)
+	var tip_x = abs( self.global_position.x) 
+	var proximity = abs ( self_x - tip_x )
+	if proximity < 20:
+		tip_attached = true #si la punta esta cerca jugador la recoge
+	else:    
+		Tip.set_retrieved(true)
+		Tip.launch(self.global_position)#punta se mueve hacia el jugador
+	

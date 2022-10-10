@@ -1,6 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/sprites/capibara/charlieTheCapybaraAnimationSheet.png" type="Texture" id=1]
+[ext_resource path="res://punta/Punta.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/sprites/icon.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Entities/direccionbala2.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Entities/player2.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30, 15 )
@@ -48,6 +52,7 @@ start_node = "idle"
 
 [node name="pj2" type="KinematicBody2D"]
 collision_layer = 2
+script = ExtResource( 5 )
 
 [node name="Pivot" type="Node2D" parent="."]
 
@@ -56,13 +61,30 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 hframes = 9
 vframes = 9
-frame = 9
+frame = 16
+
+[node name="spawnBala" type="Position2D" parent="Pivot"]
+position = Vector2( -20, 8 )
+
+[node name="direccion2" type="Position2D" parent="Pivot"]
+position = Vector2( 12, 0 )
+script = ExtResource( 4 )
+
+[node name="mira" type="Sprite" parent="Pivot/direccion2"]
+modulate = Color( 1, 0.160784, 0.160784, 1 )
+self_modulate = Color( 1, 0.0745098, 0, 1 )
+position = Vector2( 12, 0 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 4.5 )
 rotation = -6.28319
 scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )
@@ -73,3 +95,7 @@ tree_root = SubResource( 5 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 6 )
+
+[node name="Punta" parent="." instance=ExtResource( 2 )]
+position = Vector2( -20, 8 )
+collision_layer = 4
