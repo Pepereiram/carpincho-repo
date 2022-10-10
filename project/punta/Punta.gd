@@ -39,7 +39,7 @@ func set_retrieved(value : bool) :
 func calculate_arc_velocity(source_position,target_position,arc_height):
 	var displacement = target_position - source_position
 	
-	if displacement.y > arc_height:
+	if displacement.y > arc_height and arc_height < 0:
 		var time_up = sqrt(-2* arc_height / float(GRAVITY))
 		var time_down = sqrt(2 * (displacement.y - arc_height) / float(GRAVITY))
 	

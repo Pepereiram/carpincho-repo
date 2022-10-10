@@ -42,8 +42,10 @@ func _physics_process(delta):
 			pivot.scale.x = -1
 	
 	#acciones con la ""caña""
-	if Input.is_action_just_pressed("lanzar1"):
+	if Input.is_action_pressed("lanzar1"):
 		if tip_attached == true:
+			#comenzar un timer interno para que la mira (potencia) varie en el tiempo
+			# setPotencia(+1)
 			shoot()    
 		else:
 			retrieve()
