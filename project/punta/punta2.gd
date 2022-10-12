@@ -14,17 +14,22 @@ func _ready():
 #Fisicas mientras la punta vuela
 func _physics_process(delta):    
 	velocity.y += GRAVITY * delta
-	var collision = move_and_collide(velocity * delta)
+	var collision = move_and_collide(velocity * delta,false)
 	if collision != null:
-		_on_impact(collision.normal)
+		_on_impact(collision)
 
 #Que hacer cuando la punta impacta
-func _on_impact(normal : Vector2):
-	#si no colisiona con nada que pueda agarrar se detiene
-	if retrieved == false:
-		velocity = Vector2(0,0)
-	#aqui rellenar con lo que pasa cuando colisiona con algo que puede agarrar
-	
+func _on_impact(collision : KinematicCollision2D):
+	var layer = collision.collider.get_collision_layer()
+	if layer == 2 or layer == 33: 
+		print("agarrar")
+	else:
+		var normal = collision.normal
+		velocity = velocity.bounce(normal)
+		velocity *= 0.5 + rand_range(-0.05, 0.05)
+		print("rebote aca")	
+		
+
 #Lanzamiento de la punta
 func launch(target_position : Vector2):
 	var arc_height = target_position.y - global_position.y - 16
@@ -49,4 +54,3 @@ func calculate_arc_velocity(source_position,target_position,arc_height):
 			velocity.x= displacement.x / float(time_up + time_down)
 		else:    
 			velocity.x= displacement.x / float(time_up - time_down)    
-

@@ -28,7 +28,7 @@ func _process(delta):
 
 #Fisicas del personaje
 func _physics_process(delta):
-	move_and_slide(velocity, Vector2.UP)
+	move_and_slide(velocity, Vector2.UP , false, 4, PI/4, false)
 	#movimiento izquierda y derecha
 	var move_input = Input.get_axis("move_left", "move_right")
 	velocity.x = move_toward(velocity.x, move_input*SPEED, ACCELERATION)

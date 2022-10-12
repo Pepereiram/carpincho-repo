@@ -8,9 +8,12 @@ var GRAVITY = 10
 var JUMP_SPEED = 200
 #orientacion
 onready var pivot = $Pivot
-
+#animaciones
+onready var anim_player = $Animation
+onready var anim_tree = $AnimationTree
+onready var playback = anim_tree.get("parameters/playback")
 #Variables caña
-onready var Tip = $Punta
+onready var Tip = $punta2
 onready var tip_spawn = $Pivot/spawnBala
 onready var shoot_direction = $Pivot/direccion2
 var tip_attached = true #es un estado
@@ -20,7 +23,7 @@ func _process(delta):
 		Tip.global_position = tip_spawn.global_position #punta se mantiene en spawn  
 
 func _physics_process(delta):
-	move_and_slide(velocity, Vector2.UP)
+	move_and_slide(velocity, Vector2.UP , false, 4, PI/4, false)
 	#movimiento izquierda y derecha
 	var move_input = Input.get_axis("move_left2", "move_right2")
 	velocity.x = move_toward(velocity.x, move_input*SPEED, ACCELERATION)
@@ -41,6 +44,26 @@ func _physics_process(delta):
 			shoot()    
 		else:
 			retrieve()		
+			
+	# ------- Animations ------------
+	"""
+	if Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left"):
+		pivot.scale.x = 1
+	if Input.is_action_pressed("move_left") and not Input.is_action_pressed("move_right"):
+		pivot.scale.x = -1
+	"""
+	if is_on_floor():
+		if abs(velocity.x) > 0:
+			playback.travel("run")
+		else:
+			playback.travel("idle")
+	else:
+		if velocity.y > 0:
+			playback.travel("jump_asc")
+		elif velocity.y < 0:
+			playback.travel("jump_fall")
+			
+			
 			
 #Jugador lanza la punta
 func shoot():
