@@ -8,6 +8,34 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Player1",
+"language": "GDScript",
+"path": "res://Scenes/Entities/player1.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player2",
+"language": "GDScript",
+"path": "res://Scenes/Entities/player2.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "punta1",
+"language": "GDScript",
+"path": "res://punta/Punta1.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "punta2",
+"language": "GDScript",
+"path": "res://punta/punta2.gd"
+} ]
+_global_script_class_icons={
+"Player1": "",
+"Player2": "",
+"punta1": "",
+"punta2": ""
+}
+
 [application]
 
 config/name="Carpincho"
@@ -70,7 +98,7 @@ apuntar_abajo={
 }
 move_up={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":59,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":88,"unicode":0,"echo":false,"script":null)
  ]
 }
 move_up2={
@@ -91,6 +119,11 @@ apuntar_abajo2={
 lanzar2={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":46,"unicode":0,"echo":false,"script":null)
+ ]
+}
+soltar1={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":86,"unicode":0,"echo":false,"script":null)
  ]
 }
 

@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="Punta" type="KinematicBody2D"]
-collision_layer = 9
+collision_layer = 8
 collision_mask = 37
 script = ExtResource( 1 )
 
@@ -16,6 +16,6 @@ self_modulate = Color( 0.6, 1, 0, 1 )
 scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="cs" type="CollisionShape2D" parent="."]
 scale = Vector2( 0.15, 0.15 )
 shape = SubResource( 1 )

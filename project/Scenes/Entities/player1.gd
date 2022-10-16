@@ -1,30 +1,44 @@
+class_name Player1
 extends KinematicBody2D
 
-#Variables movimiento
+# <----- Variables ----->
+
+#movement
 var velocity = Vector2()
 var SPEED = 200
 var ACCELERATION = 100
 var GRAVITY = 10
-var JUMP_SPEED = 200
+var JUMP_SPEED = 180
+#orientation
+onready var pivot = $Pivot
+#animation
 onready var anim_player = $Animation
 onready var anim_tree = $AnimationTree
 onready var playback = anim_tree.get("parameters/playback")
-
-onready var pivot = $Pivot
-
-func _ready():
-	anim_tree.active = true
-
-#Variables caña
+#Rod
 onready var Tip = $Punta
 onready var tip_spawn = $Pivot/spawnBala
 onready var shoot_direction = $Pivot/direccionBala
-var tip_attached = true #es un estado
+#states
+var tip_attached = true 
+var grabbed = false
 
+# <----- Set up ----->
+
+func _ready():
+	anim_tree.active = true
+	Tip.get_node("cs").disabled = true
+	Tip.get_node("Sprite").hide()
+
+# <----- Every frame check the state ----->
 
 func _process(delta):
-	if tip_attached == true: #jugador no ha lanzado la punta
+	if tip_attached: #jugador no ha lanzado la punta
 		Tip.global_position = tip_spawn.global_position #punta se mantiene en spawn  
+	if grabbed:
+		grabbed_physics(delta)
+
+# <----- Physics of the player ----->
 
 #Fisicas del personaje
 func _physics_process(delta):
@@ -38,7 +52,6 @@ func _physics_process(delta):
 	#jumping:
 	if is_on_floor() and Input.is_action_just_pressed("move_up"):
 		velocity.y = -JUMP_SPEED
-	
 		
 	#rotar sprite hacia los lados
 	if Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left"):
@@ -52,7 +65,13 @@ func _physics_process(delta):
 			shoot()    
 		else:
 			retrieve()
-	
+	if Input.is_action_just_pressed("soltar1"):
+		
+		if Tip.velocity.x != 0 and Tip.velocity.y != 0 : 
+			print("hacer algo")
+		else:
+			retrieve()	
+
 	# ------- Animations ------------
 	"""
 	if Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left"):
@@ -70,14 +89,22 @@ func _physics_process(delta):
 			playback.travel("jump_asc")
 		elif velocity.y < 0:
 			playback.travel("jump_fall")
-	
-	
-		
+
+#Fisicas personaje agarrado
+func grabbed_physics(delta):
+	velocity.y += 200 * delta
+	var collision = move_and_collide(velocity * delta, false)
+
+
+# <----- Rod functionalities ----->
 
 #Jugador lanza la punta
 func shoot():
+	Tip.get_node("cs").disabled = false
+	Tip.get_node("Sprite").show()
+	
 	tip_attached = false
-	Tip.set_retrieved(false)
+	Tip.retrieved = false
 	self.remove_child(Tip) #punta deja de ser hija del jugador
 	get_parent().add_child(Tip) #punta es hija del escenario
 	Tip.global_position = tip_spawn.global_position #punta se posiciona en su spawn   
@@ -89,8 +116,16 @@ func retrieve():
 	var tip_x = abs( self.global_position.x) 
 	var proximity = abs ( self_x - tip_x )
 	if proximity < 20:
+		if Tip.hooked:
+			disconnect_object()
+		Tip.get_node("cs").disabled = true
+		Tip.get_node("Sprite").hide()#devuelve valores por defecto
 		tip_attached = true #si la punta esta cerca jugador la recoge
 	else:    
-		Tip.set_retrieved(true)
+		Tip.retrieved = true
 		Tip.launch(self.global_position)#punta se mueve hacia el jugador
-	
+
+func disconnect_object():
+	Tip.hooked = false
+	Tip.hb.grabbed = false 
+	Tip.hb.set_physics_process(true)
