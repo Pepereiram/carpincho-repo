@@ -2,7 +2,10 @@ extends KinematicBody2D
 
 #variables
 var velocity = Vector2(0,0)
+const SPEED = 200
+const ACCELERATION = 100
 const GRAVITY = 200
+#states
 var grabbed = false
 
 func _process(delta):
@@ -11,7 +14,11 @@ func _process(delta):
 		
 func _physics_process(delta):
 	move_and_slide(velocity, Vector2.UP , false, 4, PI/4, false)
-
+	velocity.y += 10
+	if is_on_floor():
+		velocity.y = 0
+		velocity.x = 0
+		
 func grabbed_physics(delta):
 	velocity.y += GRAVITY * delta
 	var collision = move_and_collide(velocity * delta, false)
