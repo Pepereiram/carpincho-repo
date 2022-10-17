@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://menu/theme.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/Entities/player2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/tilemapTest.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Entities/player1.tscn" type="PackedScene" id=4]
+
+[node name="Tutorial" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource( 3 )]
+tile_data = PoolIntArray( 65535, 21, 0, 0, 27, 0, 1, 21, 0, 131071, 3, 0, 65536, 15, 0, 65537, 28, 0, 65538, 28, 0, 65539, 28, 0, 65540, 28, 0, 65541, 28, 0, 65542, 28, 0, 65543, 28, 0, 65544, 28, 0, 65545, 28, 0, 65546, 28, 0, 65547, 28, 0, 65548, 28, 0, 196607, 3, 0, 131072, 28, 0, 131073, 28, 0, 131074, 28, 0, 131075, 28, 0, 131076, 28, 0, 131077, 28, 0, 131078, 28, 0, 131079, 28, 0, 131080, 28, 0, 131081, 28, 0, 131082, 28, 0, 131083, 28, 0, 131084, 28, 0, 262143, 3, 0, 196608, 28, 0, 196609, 10, 0, 196610, 28, 0, 196611, 28, 0, 196612, 13, 0, 196613, 28, 0, 196614, 28, 0, 196615, 11, 0, 196616, 28, 0, 196617, 20, 0, 196620, 28, 0, 327679, 3, 0, 262144, 28, 0, 262145, 28, 0, 262146, 28, 0, 262147, 28, 0, 262148, 28, 0, 262149, 28, 0, 262150, 28, 0, 262151, 28, 0, 262152, 28, 0, 262156, 28, 0, 393215, 3, 0, 327680, 28, 0, 327681, 28, 0, 327682, 18, 0, 327683, 28, 0, 327684, 14, 0, 327685, 28, 0, 327686, 28, 0, 327687, 16, 0, 327688, 28, 0, 327689, 28, 0, 327690, 28, 0, 327691, 28, 0, 327692, 28, 0, 458751, 3, 0, 393216, 1, 0, 393217, 1, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="player1" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( 47, 184 )
+
+[node name="pj2" parent="TileMap" instance=ExtResource( 2 )]
+position = Vector2( 23, 184 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 25.0
+margin_top = 79.0
+margin_right = 411.0
+margin_bottom = 103.0
+rect_scale = Vector2( 0.5, 0.5 )
+theme = ExtResource( 1 )
+text = "PRESS A & D TO MOVE AROUND"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
