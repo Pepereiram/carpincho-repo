@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://menu/theme.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/Entities/player2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/tilemapTest.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Entities/player1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Props/Box.tscn" type="PackedScene" id=5]
 
 [node name="Tutorial" type="Node2D"]
 
@@ -18,6 +19,9 @@ position = Vector2( 47, 184 )
 
 [node name="pj2" parent="TileMap" instance=ExtResource( 2 )]
 position = Vector2( 23, 184 )
+
+[node name="Box" parent="TileMap" instance=ExtResource( 5 )]
+position = Vector2( 209, 177 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 25.0
