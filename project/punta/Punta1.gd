@@ -7,7 +7,7 @@ const GRAVITY = 200
 #Objeto agarrado
 var hb = null
 #estados
-var retrieved = false
+var on_air = false
 var hooked = false
 #posicion despues de agarrado
 var dif = Vector2.ZERO
@@ -57,30 +57,36 @@ func attach_pj(hooked_object,normal):
 
 # <----- Movement ----->
 
+func launch2(new_velocity : Vector2, orientation):
+	velocity = new_velocity
+	velocity.x *= orientation
+	if hooked:
+		hb.velocity = velocity
+	else:	
+		set_physics_process(true)
+	
+
 #Lanzamiento de la punta
 func launch(target_position : Vector2):
 	var arc_height = target_position.y - global_position.y - 16
-	calculate_arc_velocity(global_position,target_position,arc_height)
+	arc_height = min(arc_height, - 16)
+	calculate_arc_velocity(global_position,target_position,arc_height)		
 	if !hooked:
 		set_physics_process(true)
 	else:
-		hb.velocity = self.velocity #se le da la velocidad de la punta al objeto
-									#agarrado
+		hb.velocity = velocity
+		
  
 #Calculo velocidad inicial    
 func calculate_arc_velocity(source_position,target_position,arc_height):
 	var displacement = target_position - source_position
-	
 	if displacement.y > arc_height and arc_height < 0:
 		var time_up = sqrt(-2* arc_height / float(GRAVITY))
 		var time_down = sqrt(2 * (displacement.y - arc_height) / float(GRAVITY))
 	
 		velocity.y = -sqrt( -2 * GRAVITY * arc_height)
-		#el trucazo por accidente...
-		if retrieved == true:
-			velocity.x= displacement.x / float(time_up + time_down)
-		else:    
-			velocity.x= displacement.x / float(time_up - time_down)    
+		velocity.x= displacement.x / float(time_up + time_down)
+		 
 			
 
 

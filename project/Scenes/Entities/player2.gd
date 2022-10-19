@@ -66,7 +66,14 @@ func _physics_process(delta):
 func grabbed_physics(delta):
 	velocity.y += 200 * delta
 	var collision = move_and_collide(velocity * delta, false)
-
+	if collision != null:
+		_on_impact(collision)	
+		
+func _on_impact(collision):
+	var normal = collision.normal
+	velocity = velocity.bounce(normal)
+	velocity *= 0.2 + rand_range(-0.02, 0.02)	
+	
 # <----- Rod functionalities ----->
 
 func shoot():

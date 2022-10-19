@@ -1,10 +1,13 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://assets/sprites/Neon/Spritesheets/Main Character - Male - Full spritesheet - No Guide.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Entities/direccionBala.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/icon.png" type="Texture" id=3]
 [ext_resource path="res://punta/Punta1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Entities/player1.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=44]
+extents = Vector2( 7.5, 14 )
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -226,10 +229,10 @@ __meta__ = {
 }
 
 [node name="spawnBala" type="Position2D" parent="Pivot"]
-position = Vector2( -8, 11 )
+position = Vector2( 13, 3 )
 
 [node name="direccionBala" type="Position2D" parent="Pivot"]
-position = Vector2( 12, 0 )
+position = Vector2( 13, 3 )
 script = ExtResource( 2 )
 
 [node name="mira" type="Sprite" parent="Pivot/direccionBala"]
@@ -237,6 +240,15 @@ modulate = Color( 1, 0.160784, 0.160784, 1 )
 self_modulate = Color( 1, 0.0745098, 0, 1 )
 scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 3 )
+
+[node name="Tip_detector" type="Area2D" parent="Pivot"]
+position = Vector2( 2, 3 )
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot/Tip_detector"]
+position = Vector2( 7.5, 0 )
+shape = SubResource( 44 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 0.45, 0.4 )
@@ -246,7 +258,7 @@ __meta__ = {
 }
 
 [node name="Punta" parent="." instance=ExtResource( 4 )]
-position = Vector2( -10, 8 )
+position = Vector2( 11, 0 )
 collision_layer = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -263,3 +275,9 @@ anims/run = SubResource( 5 )
 tree_root = SubResource( 26 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 16 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="Pivot/Tip_detector" to="." method="_on_Tip_detector_body_entered"]
+[connection signal="body_exited" from="Pivot/Tip_detector" to="." method="_on_Tip_detector_body_exited"]

@@ -59,7 +59,8 @@ func attach_pj(hooked_object,normal):
 
 #Lanzamiento de la punta
 func launch(target_position : Vector2):
-	var arc_height = target_position.y - global_position.y - 16
+	var arc_height = target_position.y - global_position.y - 32
+	arc_height = min(arc_height, -32)
 	calculate_arc_velocity(global_position,target_position,arc_height)
 	if !hooked:
 		set_physics_process(true)

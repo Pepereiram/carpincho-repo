@@ -7,6 +7,7 @@ const ACCELERATION = 100
 const GRAVITY = 200
 #states
 var grabbed = false
+var on_air = false
 
 func _process(delta):
 	if grabbed:
@@ -26,6 +27,7 @@ func grabbed_physics(delta):
 		_on_impact(collision)	
 		
 func _on_impact(collision):
+	#print(collision.collider)
 	var normal = collision.normal
 	velocity = velocity.bounce(normal)
 	velocity *= 0.2 + rand_range(-0.02, 0.02)			

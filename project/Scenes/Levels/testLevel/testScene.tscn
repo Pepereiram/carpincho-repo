@@ -9,7 +9,7 @@
 [node name="testScene" type="Node2D"]
 
 [node name="pj1" parent="." instance=ExtResource( 5 )]
-position = Vector2( 277, 55 )
+position = Vector2( 79, 87 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -36,7 +36,7 @@ __meta__ = {
 }
 
 [node name="pj2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 298, 128 )
+position = Vector2( 216, 98 )
 
 [node name="Box" parent="." instance=ExtResource( 2 )]
-position = Vector2( 57, 86 )
+position = Vector2( 298, 52 )

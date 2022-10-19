@@ -19,9 +19,11 @@ onready var playback = anim_tree.get("parameters/playback")
 onready var Tip = $Punta
 onready var tip_spawn = $Pivot/spawnBala
 onready var shoot_direction = $Pivot/direccionBala
+onready var timer = $Timer
 #states
 var tip_attached = true 
 var grabbed = false
+var near_tip = true
 
 # <----- Set up ----->
 
@@ -59,18 +61,13 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_left") and not Input.is_action_pressed("move_right"):
 			pivot.scale.x = -1
 	
-	#acciones con la ""caña""
-	if Input.is_action_just_pressed("lanzar1"):
-		if tip_attached == true:
-			shoot()    
-		else:
-			retrieve()
+	# ------- INPUT MANAGER ------------
+	
+	#Ver caso a caso acciones del boton c
+	_process_primary_button() 
+	#Ver caso a caso acciones del boton b
 	if Input.is_action_just_pressed("soltar1"):
-		
-		if Tip.velocity.x != 0 and Tip.velocity.y != 0 : 
-			print("hacer algo")
-		else:
-			retrieve()	
+		_process_secondary_button()
 
 	# ------- Animations ------------
 	"""
@@ -94,38 +91,93 @@ func _physics_process(delta):
 func grabbed_physics(delta):
 	velocity.y += 200 * delta
 	var collision = move_and_collide(velocity * delta, false)
+	
+	
+# <----- Process rod inputs ----->
+
+func _process_primary_button():
+	near_tip = near_value()
+	#LANZAR LA PUNTA
+	#(si no he lanzado la punta aun) o (si la punta esta enganchada y cerca)
+	if tip_attached or (near_tip and Tip.hooked):
+		#lanzamiento
+		if Input.is_action_pressed("lanzar1"):
+			shoot_direction.potencia += 0.4 #cargando
+		if Input.is_action_just_released("lanzar1"):
+			shoot() #soltando
+	#TRAER DE VUELTA LA PUNTA		
+	else:
+		if Input.is_action_just_pressed("lanzar1") and timer.is_stopped():
+			timer.start(1)
+			retrieve() #traerlo devuelta
+
+
+#BOTON SECUANDARIO V
+func _process_secondary_button():
+	near_tip = near_value()
+	#SI ESTOY CERCA SE RECOGE LA PUNTA
+	if near_tip:
+		disconnect_tip()
+	else:
+		#SI ESTOY LEJOS Y LA PUNTA ESTA ENGANCHADA, ENTONCES
+		#SE DEVUELVE 
+		if Tip.hooked:
+			disconnect_object()
+			Tip.hooked = false
+			Tip.get_node("cs").disabled = false
+			retrieve()
+
+
 
 
 # <----- Rod functionalities ----->
 
 #Jugador lanza la punta
 func shoot():
-	Tip.get_node("cs").disabled = false
-	Tip.get_node("Sprite").show()
-	
-	tip_attached = false
-	Tip.retrieved = false
-	self.remove_child(Tip) #punta deja de ser hija del jugador
-	get_parent().add_child(Tip) #punta es hija del escenario
-	Tip.global_position = tip_spawn.global_position #punta se posiciona en su spawn   
-	Tip.launch(shoot_direction.global_position) #punta se lanza en direccion a la mira
+	if tip_attached:
+		tip_attached = false
+		Tip.get_node("cs").disabled = false
+		Tip.get_node("Sprite").show()	
+		self.remove_child(Tip) #punta deja de ser hija del jugador
+		get_parent().add_child(Tip) #punta es hija del escenario
+		Tip.global_position = shoot_direction.global_position #punta se posiciona en su spawn   
+	var orientation = pivot.scale.x
+	var vel_vector = shoot_direction.velocity_vector()
+	Tip.launch2(vel_vector,orientation)
+	shoot_direction.potencia = 5
 
 #Punta se devuelve hacia el jugador
 func retrieve():
-	var self_x = abs(Tip.global_position.x)
-	var tip_x = abs( self.global_position.x) 
-	var proximity = abs ( self_x - tip_x )
-	if proximity < 20:
-		if Tip.hooked:
-			disconnect_object()
-		Tip.get_node("cs").disabled = true
-		Tip.get_node("Sprite").hide()#devuelve valores por defecto
-		tip_attached = true #si la punta esta cerca jugador la recoge
-	else:    
-		Tip.retrieved = true
-		Tip.launch(self.global_position)#punta se mueve hacia el jugador
+	Tip.launch(shoot_direction.global_position)#punta se mueve hacia el jugador
+
+func disconnect_tip():
+	if Tip.hooked:
+		disconnect_object()
+	Tip.get_node("cs").disabled = true
+	Tip.get_node("Sprite").hide()#devuelve valores por defecto
+	tip_attached = true #si la punta esta cerca jugador la recoge
+
 
 func disconnect_object():
 	Tip.hooked = false
 	Tip.hb.grabbed = false 
 	Tip.hb.set_physics_process(true)
+
+#FUNCION MUY POCO EFICIENTE, PROXIMAMENTE SE VA A CAMBIAR POR LA DETECCION DEL AREA
+func near_value():
+	var self_x = abs(Tip.global_position.x)
+	var tip_x = abs( self.global_position.x) 
+	var self_y = abs(Tip.global_position.y)
+	var tip_y = abs( self.global_position.y) 
+	var proximity_x = abs ( self_x - tip_x )
+	var proximity_y = abs ( self_y - tip_y )
+	return proximity_x < 20 and proximity_y < 20
+
+func _on_Tip_detector_body_entered(body):
+	pass
+#	near_tip = true
+
+
+func _on_Tip_detector_body_exited(body):
+	pass
+#	near_tip = false
