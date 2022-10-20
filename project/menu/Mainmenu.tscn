@@ -61,6 +61,12 @@ margin_bottom = 91.0
 theme = ExtResource( 2 )
 text = "Exit"
 
+[node name="tutorial" type="Button" parent="VBoxContainer"]
+margin_top = 95.0
+margin_right = 350.0
+margin_bottom = 102.0
+text = "Tutorial"
+
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.513726, 0.494118, 0.494118, 1 )
 position = Vector2( 199.25, 98 )

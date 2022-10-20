@@ -12,7 +12,7 @@ var JUMP_SPEED = 180
 #orientation
 onready var pivot = $Pivot
 #animation
-onready var anim_player = $Animation
+onready var anim_player = $AnimationPlayer
 onready var anim_tree = $AnimationTree
 onready var playback = anim_tree.get("parameters/playback")
 #Rod

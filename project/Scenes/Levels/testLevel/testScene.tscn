@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/sprites/Sky-layer.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/Props/Box.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Props/yellow_pipe.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/tilemapTest.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Entities/player1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Entities/player2.tscn" type="PackedScene" id=6]
@@ -38,5 +38,5 @@ __meta__ = {
 [node name="pj2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 216, 98 )
 
-[node name="Box" parent="." instance=ExtResource( 2 )]
-position = Vector2( 298, 52 )
+[node name="yellow_pipe" parent="." instance=ExtResource( 2 )]
+position = Vector2( 268, 138 )
