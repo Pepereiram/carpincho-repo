@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://menu/theme.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/Entities/player2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/tilemapTest.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Entities/player1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Props/wood_box.tscn" type="PackedScene" id=5]
+[ext_resource path="res://menu/PauseMenu/PauseMenu.tscn" type="PackedScene" id=6]
 
 [node name="Tutorial" type="Node2D"]
 
@@ -34,3 +35,9 @@ theme = ExtResource( 1 )
 text = "PRESS A & D TO MOVE AROUND"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="PauseMenu" parent="." instance=ExtResource( 6 )]
+margin_left = 183.0
+margin_top = -1.0
+margin_right = 401.0
+margin_bottom = 198.0

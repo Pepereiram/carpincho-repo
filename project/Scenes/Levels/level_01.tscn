@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Levels/Tiles/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Props/black_pipe.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/Props/press.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Entities/player2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://menu/PauseMenu/PauseMenu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Entities/player1.tscn" type="PackedScene" id=82]
 
 [node name="level_01" type="Node2D"]
@@ -43,3 +44,10 @@ position = Vector2( 204, 88 )
 position = Vector2( 362, 180 )
 scale = Vector2( 0.75, 0.75 )
 collision_layer = 33
+
+[node name="PauseMenu" parent="." instance=ExtResource( 7 )]
+anchor_left = 0.0
+margin_left = 182.0
+margin_top = -2.0
+margin_right = 400.0
+margin_bottom = 197.0
