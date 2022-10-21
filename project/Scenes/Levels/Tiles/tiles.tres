@@ -1660,14 +1660,8 @@ points = PoolVector2Array( 32, 16, 0, 16, 0, 0, 32, 0 )
 81/shape_offset = Vector2( 0, 0 )
 81/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 81/shape_one_way = false
-81/shape_one_way_margin = 1.0
-81/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": null,
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+81/shape_one_way_margin = 0.0
+81/shapes = [  ]
 81/z_index = 0
 82/name = "Pointer2.png 82"
 82/texture = ExtResource( 94 )
