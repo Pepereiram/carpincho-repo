@@ -18,10 +18,11 @@ __meta__ = {
 position = Vector2( 47, 184 )
 
 [node name="pj2" parent="TileMap" instance=ExtResource( 2 )]
-position = Vector2( 23, 184 )
+position = Vector2( 21, 184 )
 
 [node name="Box" parent="TileMap" instance=ExtResource( 5 )]
 position = Vector2( 209, 177 )
+scale = Vector2( 5, 5 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 25.0

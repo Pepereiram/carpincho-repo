@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Levels/Tiles/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Props/black_pipe.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Props/wood_box.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Props/press.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Entities/player2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Entities/player1.tscn" type="PackedScene" id=82]
 
 [node name="level_01" type="Node2D"]
@@ -29,11 +30,16 @@ position = Vector2( 281, 183 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="press" parent="." instance=ExtResource( 4 )]
-position = Vector2( 335, 160 )
+position = Vector2( 241, 64 )
 
 [node name="Box" parent="." instance=ExtResource( 3 )]
 position = Vector2( 79, 122 )
 scale = Vector2( 3, 3 )
 
 [node name="pj2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 204, 87 )
+position = Vector2( 204, 88 )
+
+[node name="NewPlayer" parent="." instance=ExtResource( 6 )]
+position = Vector2( 362, 180 )
+scale = Vector2( 0.75, 0.75 )
+collision_layer = 33
