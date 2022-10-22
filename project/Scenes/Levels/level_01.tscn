@@ -46,6 +46,7 @@ scale = Vector2( 0.75, 0.75 )
 collision_layer = 33
 
 [node name="PauseMenu" parent="." instance=ExtResource( 7 )]
+visible = false
 anchor_left = 0.0
 margin_left = 182.0
 margin_top = -2.0
