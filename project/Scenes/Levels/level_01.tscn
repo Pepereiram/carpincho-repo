@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/Props/wood_box.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Props/press.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Entities/player2.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://menu/PauseMenu/PauseMenu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Entities/player1.tscn" type="PackedScene" id=82]
 
