@@ -43,6 +43,7 @@ var look_down
 
 func _ready():
 	anim_tree.active = true
+	#Tip.deactivate_collision()
 	Tip.get_node("cs").disabled = true
 	Tip.get_node("Sprite").hide()
 
@@ -118,7 +119,6 @@ func _on_impact(collision):
 # <----- Process rod inputs ----->
 
 func _process_primary_button():
-	near_tip = near_value()
 	#LANZAR LA PUNTA
 	#(si no he lanzado la punta aun) o (si la punta esta enganchada y cerca)
 	if tip_attached or (near_tip and Tip.hooked):
@@ -137,7 +137,6 @@ func _process_primary_button():
 
 #BOTON SECUANDARIO V
 func _process_secondary_button():
-	near_tip = near_value()
 	#SI ESTOY CERCA SE RECOGE LA PUNTA
 	if near_tip:
 		disconnect_tip()
@@ -147,8 +146,9 @@ func _process_secondary_button():
 		if Tip.hooked:
 			disconnect_object()
 			Tip.hooked = false
+			#Tip.activate_collision()
 			Tip.get_node("cs").disabled = false
-			retrieve()
+			Tip.normal_launch()
 
 
 # <----- Rod functionalities ----->
@@ -157,6 +157,7 @@ func _process_secondary_button():
 func shoot():
 	if tip_attached:
 		tip_attached = false
+		#Tip.activate_collision()
 		Tip.get_node("cs").disabled = false
 		Tip.get_node("Sprite").show()	
 		self.remove_child(Tip) #punta deja de ser hija del jugador
@@ -174,6 +175,7 @@ func retrieve():
 func disconnect_tip():
 	if Tip.hooked:
 		disconnect_object()
+	#Tip.deactivate_collision()	
 	Tip.get_node("cs").disabled = true
 	Tip.get_node("Sprite").hide()#devuelve valores por defecto
 	tip_attached = true #si la punta esta cerca jugador la recoge
@@ -183,25 +185,6 @@ func disconnect_object():
 	Tip.hooked = false
 	Tip.hb.grabbed = false 
 	Tip.hb.set_physics_process(true)
-
-#FUNCION MUY POCO EFICIENTE, PROXIMAMENTE SE VA A CAMBIAR POR LA DETECCION DEL AREA
-func near_value():
-	var self_x = abs(Tip.global_position.x)
-	var tip_x = abs( self.global_position.x) 
-	var self_y = abs(Tip.global_position.y)
-	var tip_y = abs( self.global_position.y) 
-	var proximity_x = abs ( self_x - tip_x )
-	var proximity_y = abs ( self_y - tip_y )
-	return proximity_x < 20 and proximity_y < 20
-
-func _on_Tip_detector_body_entered(body):
-	pass
-#	near_tip = true
-
-
-func _on_Tip_detector_body_exited(body):
-	pass
-#	near_tip = false
 
 func gun_input():
 	#si se aprieta "q" la mira sube
@@ -229,3 +212,6 @@ func velocity_vector():
 	final_velocity.y = potencia * new_position.y
 
 	return final_velocity
+	
+func set_near(value):
+	near_tip = value

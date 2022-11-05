@@ -11,8 +11,10 @@ var on_air = false
 var hooked = false
 #posicion despues de agarrado
 var dif = Vector2.ZERO
+var attached_normal = Vector2.ZERO
 #collision layer
 var player_layer
+var tip_layer
 
 
 # <----- Set up ----->
@@ -43,14 +45,17 @@ func _on_impact(collision):
 	var layer = object_touched.get_collision_layer()
 	
 	if layer == player_layer or layer == 32 and !hooked: #choque objeto "agarrable"
-		attach_pj(object_touched,normal)
+		#deactivate_collision()
+		attached_normal = normal
+		attach_pj(object_touched)
 
 	else: #choque paredes
 		velocity = velocity.bounce(normal)
 		velocity *= 0.5 + rand_range(-0.05, 0.05)
 
-func attach_pj(hooked_object,normal):
+func attach_pj(hooked_object):
 	self.get_node("cs").disabled = true #se desactivan colisiones punta
+	
 	dif = hooked_object.position - self.position 
 	self.position = hooked_object.position + dif #punta se "pega" en el lugar donde choco
 	hb = hooked_object #se guarda objeto chocado en una variable global
@@ -79,6 +84,10 @@ func launch(target_position : Vector2):
 	else:
 		hb.velocity = velocity
 		
+
+func normal_launch():
+	velocity = 80 * attached_normal
+	set_physics_process(true)
  
 #Calculo velocidad inicial    
 func calculate_arc_velocity(source_position,target_position,arc_height):
