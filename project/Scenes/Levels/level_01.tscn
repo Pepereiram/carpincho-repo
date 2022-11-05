@@ -1,13 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Levels/Tiles/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Props/black_pipe.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Props/wood_box.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Props/press.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Entities/player2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://menu/PauseMenu/PauseMenu.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Entities/player1.tscn" type="PackedScene" id=82]
 
 [node name="level_01" type="Node2D"]
 
@@ -23,9 +22,6 @@ cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 65535, -1073741808, 0, 131071, 12, 0, 65538, 69, 0, 65547, 60, 0, 196607, 21, 0, 131076, 90, 0, 131077, 88, 0, 131078, 81, 0, 131079, 19, 0, 131080, 19, 0, 131081, 19, 0, 131082, 19, 0, 131083, 69, 0, 131084, 19, 0, 262143, -1610612687, 0, 196608, 83, 0, 196609, 84, 0, 196612, 17, 0, 196613, 26, 0, 196614, 26, 0, 327679, -1610612687, 0, 262145, 85, 0, 393215, -1610612687, 0, 327681, 86, 0, 327684, 93, 0, 458751, -1610612687, 0, 393217, 85, 0 )
 
-[node name="player1" parent="." instance=ExtResource( 82 )]
-position = Vector2( 111, 113 )
-
 [node name="black_pipe" parent="." instance=ExtResource( 2 )]
 position = Vector2( 281, 183 )
 scale = Vector2( 1.5, 1.5 )
@@ -37,14 +33,6 @@ position = Vector2( 241, 64 )
 position = Vector2( 79, 122 )
 scale = Vector2( 3, 3 )
 
-[node name="pj2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 204, 88 )
-
-[node name="NewPlayer" parent="." instance=ExtResource( 6 )]
-position = Vector2( 362, 180 )
-scale = Vector2( 0.75, 0.75 )
-collision_layer = 33
-
 [node name="PauseMenu" parent="." instance=ExtResource( 7 )]
 visible = false
 anchor_left = 0.0
@@ -52,3 +40,9 @@ margin_left = 182.0
 margin_top = -2.0
 margin_right = 400.0
 margin_bottom = 197.0
+
+[node name="NewPlayer" parent="." instance=ExtResource( 6 )]
+position = Vector2( 102, 110 )
+
+[node name="pj2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 195, 77 )

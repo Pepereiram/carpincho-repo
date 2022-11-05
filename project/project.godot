@@ -10,30 +10,42 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "KinematicBody2D",
-"class": "Player1",
+"class": "NewPlayer",
 "language": "GDScript",
-"path": "res://Scenes/Entities/player1.gd"
+"path": "res://Scenes/Entities/NewPlayer/NewPlayer.gd"
 }, {
 "base": "KinematicBody2D",
-"class": "Player2",
+"class": "NewPlayer1",
 "language": "GDScript",
-"path": "res://Scenes/Entities/player2.gd"
+"path": "res://Scenes/Entities/NewPlayer/NewPlayer1.gd"
 }, {
 "base": "KinematicBody2D",
-"class": "punta1",
+"class": "NewPlayer2",
 "language": "GDScript",
-"path": "res://punta/Punta1.gd"
+"path": "res://Scenes/Entities/NewPlayer/NewPlayer2.gd"
 }, {
 "base": "KinematicBody2D",
-"class": "punta2",
+"class": "Tip",
 "language": "GDScript",
-"path": "res://punta/punta2.gd"
+"path": "res://punta/Tip.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Tip1",
+"language": "GDScript",
+"path": "res://punta/Tip1.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Tip2",
+"language": "GDScript",
+"path": "res://punta/Tip2.gd"
 } ]
 _global_script_class_icons={
-"Player1": "",
-"Player2": "",
-"punta1": "",
-"punta2": ""
+"NewPlayer": "",
+"NewPlayer1": "",
+"NewPlayer2": "",
+"Tip": "",
+"Tip1": "",
+"Tip2": ""
 }
 
 [application]
