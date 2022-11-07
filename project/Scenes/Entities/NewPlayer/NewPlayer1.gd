@@ -13,11 +13,3 @@ func _init():
 
 
 
-
-
-func _on_Tip_detector_body_exited(body):
-	print("wuau")
-
-
-func _on_Tip_detector_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	print("dou")
