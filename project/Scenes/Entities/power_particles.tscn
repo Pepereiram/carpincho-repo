@@ -20,6 +20,7 @@ color_ramp = SubResource( 2 )
 [node name="Power" type="Node2D"]
 
 [node name="Particles2D" type="Particles2D" parent="."]
+emitting = false
 amount = 50
 lifetime = 3.0
 process_material = SubResource( 3 )

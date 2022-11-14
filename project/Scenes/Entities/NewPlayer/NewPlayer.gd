@@ -26,6 +26,7 @@ var potencia = 5
 var new_position = Vector2(ratio, -3)
 onready var gun = $Pivot/gun
 onready var arm = $Pivot/arm
+onready var power_part = $Pivot/direccionBala/Power
 #states
 var tip_attached = true 
 var grabbed = false
@@ -133,6 +134,7 @@ func _process_primary_button():
 		if Input.is_action_just_pressed(fire) and timer.is_stopped():
 			timer.start(1)
 			retrieve() #traerlo devuelta
+	#cambiar emiting de false a true y borrar particulas xd
 
 
 #BOTON SECUANDARIO V
