@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Levels/Tiles/tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer1.tscn" type="PackedScene" id=3]
+
+[node name="asc_lvl6" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
+show_collision = true
+compatibility_mode = true
+format = 1
+tile_data = PoolIntArray( -1, 4, 0, -65536, 4, 0, -65535, 4, 0, -65534, 4, 0, -65533, 4, 0, -65532, 4, 0, -65531, 4, 0, -65530, 4, 0, -65529, 4, 0, -65528, 4, 0, -65527, 4, 0, -65526, 4, 0, -65525, 4, 0, -65524, 4, 0, -65523, 4, 0, -65522, 4, 0, -65521, 4, 0, -65520, 4, 0, 65535, 4, 0, 0, 86, 0, 7, 4, 0, 8, 4, 0, 16, 4, 0, 131071, 4, 0, 65536, 86, 0, 65552, 4, 0, 196607, 4, 0, 131088, 4, 0, 262143, 4, 0, 196608, 4, 0, 196609, 4, 0, 196610, 4, 0, 196611, 4, 0, 196624, 4, 0, 327679, 4, 0, 262144, 4, 0, 262145, 4, 0, 262146, 4, 0, 262147, 4, 0, 262160, 4, 0, 393215, 4, 0, 327680, 4, 0, 327681, 4, 0, 327682, 4, 0, 327683, 4, 0, 327687, 4, 0, 327688, 4, 0, 327696, 4, 0, 458751, 4, 0, 393223, 4, 0, 393224, 4, 0, 393232, 4, 0, 524287, 4, 0, 458759, 4, 0, 458760, 4, 0, 458768, 4, 0, 589823, 4, 0, 524295, 4, 0, 524296, 4, 0, 524301, 4, 0, 524302, 4, 0, 524303, 4, 0, 524304, 4, 0, 655359, 4, 0, 589824, 4, 0, 589825, 4, 0, 589826, 4, 0, 589827, 4, 0, 589828, 4, 0, 589829, 4, 0, 589830, 4, 0, 589831, 4, 0, 589832, 4, 0, 589833, 4, 0, 589834, 4, 0, 589835, 4, 0, 589836, 4, 0, 589837, 4, 0, 589838, 4, 0, 589839, 4, 0, 589840, 4, 0 )
+
+[node name="NewPlayer" parent="." instance=ExtResource( 3 )]
+position = Vector2( 437, 232 )
+
+[node name="pj2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 485, 236 )

@@ -208,8 +208,8 @@ func gun_input():
 func velocity_vector():
 
 	var final_velocity = Vector2.ZERO
-	if potencia > 30:
-		potencia = 30
+	if potencia > 15:
+		potencia = 15
 	final_velocity.x = potencia * new_position.x
 	final_velocity.y = potencia * new_position.y
 
