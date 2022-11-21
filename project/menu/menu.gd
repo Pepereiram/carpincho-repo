@@ -11,7 +11,7 @@ func _ready():
 	
 	
 func _on_play_pressed():
-	get_tree().change_scene("res://Scenes/Levels/level_01.tscn")	
+	get_tree().change_scene("res://Scenes/Levels/asc_lvl1.tscn")	
 	
 func _on_exit_pressed():	
 	get_tree().quit()
