@@ -366,9 +366,10 @@ script = ExtResource( 9 )
 [node name="Pivot" type="Node2D" parent="."]
 
 [node name="Body" type="Sprite" parent="Pivot"]
-position = Vector2( 6, -7 )
+position = Vector2( 10, -7 )
 texture = ExtResource( 4 )
 hframes = 4
+frame = 2
 __meta__ = {
 "_edit_lock_": true
 }
