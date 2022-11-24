@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Levels/Tiles/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Entities/Carpincho.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sprites/Industrial Assets/2 Background/Background.png" type="Texture" id=5]
 
 [node name="boss_lvl1" type="Node2D"]
 
@@ -28,3 +29,9 @@ position = Vector2( 433, 235 )
 
 [node name="Carpincho" parent="." instance=ExtResource( 4 )]
 position = Vector2( 264, 48 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Background" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 280, 136 )
+texture = ExtResource( 5 )

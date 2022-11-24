@@ -1,12 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Entities/Carpincho.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Levels/Tiles/tiles.tres" type="TileSet" id=4]
 [ext_resource path="res://Scenes/Props/Goal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Props/wood_box.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/sprites/Industrial Assets/2 Background/Background.png" type="Texture" id=7]
 
 [node name="boss_lvl1" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 255, 130 )
+texture = ExtResource( 7 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 4 )
@@ -16,7 +22,7 @@ cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
 show_collision = true
 compatibility_mode = true
 format = 1
-tile_data = PoolIntArray( -1, 4, 0, -65536, 4, 0, -65535, 4, 0, -65534, 4, 0, -65533, 4, 0, -65532, 4, 0, -65531, 4, 0, -65530, 4, 0, -65529, 4, 0, -65528, 4, 0, -65527, 4, 0, -65526, 4, 0, -65525, 4, 0, -65524, 4, 0, -65523, 4, 0, -65522, 4, 0, -65521, 4, 0, -65520, 4, 0, 65535, 4, 0, 0, 6, 0, 1, 22, 0, 2, 22, 0, 3, 22, 0, 4, 22, 0, 5, 22, 0, 6, 22, 0, 7, 22, 0, 8, 22, 0, 9, 22, 0, 10, 22, 0, 11, 22, 0, 12, 22, 0, 13, 22, 0, 14, 22, 0, 15, 7, 0, 16, 4, 0, 131071, 4, 0, 65536, 14, 0, 65551, 12, 0, 65552, 4, 0, 196607, 4, 0, 131072, 14, 0, 131087, 12, 0, 131088, 4, 0, 262143, 4, 0, 196608, 14, 0, 196623, 12, 0, 196624, 4, 0, 327679, 4, 0, 262144, 14, 0, 262159, 12, 0, 262160, 4, 0, 393215, 4, 0, 327680, 14, 0, 327695, 12, 0, 327696, 4, 0, 458751, 4, 0, 393216, 14, 0, 393232, 4, 0, 524287, 4, 0, 458752, 14, 0, 458759, 84, 0, 458768, 4, 0, 589823, 4, 0, 524288, 15, 0, 524289, 4, 0, 524290, 4, 0, 524291, 4, 0, 524292, 4, 0, 524293, 4, 0, 524294, 4, 0, 524295, 85, 0, 524296, 4, 0, 524297, 4, 0, 524298, 4, 0, 524299, 4, 0, 524300, 4, 0, 524301, 4, 0, 524302, 4, 0, 524303, 16, 0, 524304, 4, 0 )
+tile_data = PoolIntArray( -1, 4, 0, -65536, 4, 0, -65535, 4, 0, -65534, 4, 0, -65533, 4, 0, -65532, 4, 0, -65531, 4, 0, -65530, 4, 0, -65529, 4, 0, -65528, 4, 0, -65527, 4, 0, -65526, 4, 0, -65525, 4, 0, -65524, 4, 0, -65523, 4, 0, -65522, 4, 0, -65521, 4, 0, -65520, 4, 0, 65535, 4, 0, 0, 6, 0, 1, 22, 0, 2, 22, 0, 3, 22, 0, 4, 22, 0, 5, 22, 0, 6, 22, 0, 7, 22, 0, 8, 22, 0, 9, 22, 0, 10, 22, 0, 11, 22, 0, 12, 22, 0, 13, 22, 0, 14, 22, 0, 15, 7, 0, 16, 4, 0, 131071, 4, 0, 65536, 14, 0, 65551, 12, 0, 65552, 4, 0, 196607, 4, 0, 131072, 14, 0, 131087, 12, 0, 131088, 4, 0, 262143, 4, 0, 196608, 14, 0, 196623, 12, 0, 196624, 4, 0, 327679, 4, 0, 262144, 14, 0, 262159, 12, 0, 262160, 4, 0, 393215, 4, 0, 327680, 14, 0, 327695, 12, 0, 327696, 4, 0, 458751, 4, 0, 393216, 14, 0, 393232, 4, 0, 524287, 4, 0, 458752, 14, 0, 458768, 4, 0, 589823, 4, 0, 524288, 15, 0, 524289, 4, 0, 524290, 4, 0, 524291, 4, 0, 524292, 4, 0, 524293, 4, 0, 524294, 4, 0, 524295, 86, 0, 524296, 4, 0, 524297, 4, 0, 524298, 4, 0, 524299, 4, 0, 524300, 4, 0, 524301, 4, 0, 524302, 4, 0, 524303, 16, 0, 524304, 4, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -28,8 +34,14 @@ position = Vector2( 216, 240 )
 position = Vector2( 272, 240 )
 
 [node name="Carpincho" parent="." instance=ExtResource( 1 )]
-position = Vector2( 265, 54 )
+position = Vector2( 251, 48 )
 
 [node name="Goal" parent="." instance=ExtResource( 5 )]
 position = Vector2( 496, 240 )
 next_level = "res://Scenes/Levels/boss_lvl1.tscn"
+
+[node name="Box" parent="." instance=ExtResource( 6 )]
+position = Vector2( 145, 242 )
+
+[node name="Box2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 80, 243 )

@@ -14,6 +14,12 @@ func _process(delta):
 		print("animacion de muerte") 
 	pass
 
+"""
+func _physics_process(delta):
+	var colision = move_and_collide(Vector2.ZERO, false)
+	print(colision.get)
+	pass
+"""
 #hacer esto cuando tengamos mas definido que wea
 func _on_Carpincho_body_entered(body):
 	#objeto desaparece
