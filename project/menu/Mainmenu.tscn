@@ -29,8 +29,8 @@ margin_bottom = 263.0
 theme = SubResource( 1 )
 
 [node name="Far-buildings" type="Sprite" parent="VBoxContainer"]
-position = Vector2( 229.25, 119 )
-scale = Vector2( 2.02148, 1.52083 )
+position = Vector2( 244.75, 119.5 )
+scale = Vector2( 2.14258, 1.52604 )
 texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="VBoxContainer"]

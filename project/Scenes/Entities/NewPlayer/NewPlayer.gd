@@ -7,7 +7,7 @@ extends KinematicBody2D
 var velocity = Vector2()
 var SPEED = 200
 var ACCELERATION = 100
-var GRAVITY = 600
+var GRAVITY = 550
 var JUMP_SPEED = 180
 #orientation
 onready var pivot = $Pivot
