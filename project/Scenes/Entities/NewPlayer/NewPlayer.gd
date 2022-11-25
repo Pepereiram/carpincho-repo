@@ -7,7 +7,7 @@ extends KinematicBody2D
 var velocity = Vector2()
 var SPEED = 200
 var ACCELERATION = 100
-var GRAVITY = 10
+var GRAVITY = 600
 var JUMP_SPEED = 180
 #orientation
 onready var pivot = $Pivot
@@ -65,13 +65,13 @@ func _process(delta):
 
 #Fisicas del personaje
 func _physics_process(delta):
-	move_and_slide(velocity, Vector2.UP , false, 4, PI/4, false)
+	velocity = move_and_slide(velocity, Vector2.UP , false, 4, PI/4, false)
 	#movimiento izquierda y derecha
 	var move_input = Input.get_axis(left, right)
 	velocity.x = move_toward(velocity.x, move_input*SPEED, ACCELERATION)
-	velocity.y += GRAVITY
-	if is_on_floor():
-		velocity.y = 0
+	velocity.y += GRAVITY * delta
+	#if is_on_floor(): 
+	#	velocity.y = 0
 	#jumping:
 	if is_on_floor() and Input.is_action_just_pressed(jump):
 		velocity.y = -JUMP_SPEED
