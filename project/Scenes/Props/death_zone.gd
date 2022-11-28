@@ -6,4 +6,5 @@ func _ready():
 
 
 func on_body_entered(body: Node):
-	get_tree().reload_current_scene()
+	if body.has_method("set_near"):
+		get_tree().reload_current_scene()
