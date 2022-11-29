@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/Props/blue_pipe.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6, 8 )
+extents = Vector2( 6, 7.5 )
 
 [node name="blue_pipe" type="KinematicBody2D"]
 scale = Vector2( 2, 2 )
@@ -16,6 +16,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 1, 0.95 )
 texture = ExtResource( 1 )
 hframes = 9
 vframes = 12

@@ -8,7 +8,7 @@ var velocity = Vector2()
 var SPEED = 200
 var ACCELERATION = 100
 var GRAVITY = 550
-var JUMP_SPEED = 180
+var JUMP_SPEED = 190
 #orientation
 onready var pivot = $Pivot
 #animation
@@ -94,7 +94,6 @@ func _physics_process(delta):
 
 	if is_on_floor():
 		if abs(velocity.x) > 0:
-		
 			playback.travel("run")
 		else:
 			playback.travel("idle")

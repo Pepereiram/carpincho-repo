@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DeployingSpecialFieldArea.wav-5d0c33340d007c12d8d7ab2ccc5c119b.sample"
+
+[deps]
+
+source_file="res://assets/music/SFX2020/DeployingSpecialFieldArea.wav"
+dest_files=[ "res://.import/DeployingSpecialFieldArea.wav-5d0c33340d007c12d8d7ab2ccc5c119b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

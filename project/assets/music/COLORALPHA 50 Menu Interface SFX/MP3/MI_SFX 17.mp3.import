@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/MI_SFX 17.mp3-1fcb03a8d0a26d6c10ba7dabf28ffa5e.mp3str"
+
+[deps]
+
+source_file="res://assets/music/COLORALPHA 50 Menu Interface SFX/MP3/MI_SFX 17.mp3"
+dest_files=[ "res://.import/MI_SFX 17.mp3-1fcb03a8d0a26d6c10ba7dabf28ffa5e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/sprites/Drones/1 Drones/3/Fire1.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 30.5, 16.5 )
+extents = Vector2( 33, 30 )
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -687,12 +687,13 @@ animation = "move_right"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=22]
 switch_mode = 2
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=25]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=26]
 switch_mode = 2
-disabled = true
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachine" id=5]
 states/attack_1/node = SubResource( 24 )
@@ -712,9 +713,9 @@ start_node = "idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=6]
 
-[node name="Carpincho" type="Area2D"]
+[node name="Carpincho" type="KinematicBody2D"]
 collision_layer = 64
-collision_mask = 32
+collision_mask = 33
 script = ExtResource( 2 )
 
 [node name="Pivot" type="Node2D" parent="."]
@@ -723,13 +724,14 @@ script = ExtResource( 2 )
 texture = ExtResource( 1 )
 hframes = 9
 vframes = 9
-frame = 9
+frame = 13
 
 [node name="drone" type="Sprite" parent="Pivot"]
 position = Vector2( -6, 35 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 hframes = 4
+frame = 2
 
 [node name="explosion" type="Sprite" parent="Pivot"]
 position = Vector2( -5, 43 )
@@ -737,7 +739,7 @@ texture = ExtResource( 7 )
 hframes = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.5, 6.5 )
+position = Vector2( -3, 18 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -755,7 +757,3 @@ tree_root = SubResource( 5 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 6 )
-
-[connection signal="body_entered" from="." to="." method="_on_Carpincho_body_entered"]
-[connection signal="body_shape_entered" from="." to="." method="_on_Carpincho_body_shape_entered"]
-[connection signal="body_shape_exited" from="." to="." method="_on_Carpincho_body_shape_exited"]

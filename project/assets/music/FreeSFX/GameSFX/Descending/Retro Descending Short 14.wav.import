@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Retro Descending Short 14.wav-bce3b9ed7b0b9344f974ef63a85c04fa.sample"
+
+[deps]
+
+source_file="res://assets/music/FreeSFX/GameSFX/Descending/Retro Descending Short 14.wav"
+dest_files=[ "res://.import/Retro Descending Short 14.wav-bce3b9ed7b0b9344f974ef63a85c04fa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

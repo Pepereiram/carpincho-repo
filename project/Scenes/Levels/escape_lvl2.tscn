@@ -67,19 +67,19 @@ position = Vector2( 448, 240 )
 position = Vector2( 384, 144 )
 
 [node name="blue_pipe2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 352, 144 )
+position = Vector2( 354, 144 )
 
 [node name="blue_pipe3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 304, 144 )
 
 [node name="blue_pipe4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 328, 144 )
+position = Vector2( 329, 144 )
 
 [node name="blue_pipe5" parent="." instance=ExtResource( 2 )]
 position = Vector2( 368, 112 )
 
 [node name="blue_pipe6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 344, 112 )
+position = Vector2( 342, 112 )
 
 [node name="pj2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 496, 144 )

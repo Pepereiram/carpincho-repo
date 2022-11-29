@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DropLonger.wav-ef2fd51f2c16619199f12b7e431db94c.sample"
+
+[deps]
+
+source_file="res://assets/music/SFX2020/DropLonger.wav"
+dest_files=[ "res://.import/DropLonger.wav-ef2fd51f2c16619199f12b7e431db94c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

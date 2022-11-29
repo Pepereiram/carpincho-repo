@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GetAPowerUp.wav-a13b2c381ea4a3c9949459b8df483417.sample"
+
+[deps]
+
+source_file="res://assets/music/SFX2020/GetAPowerUp.wav"
+dest_files=[ "res://.import/GetAPowerUp.wav-a13b2c381ea4a3c9949459b8df483417.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

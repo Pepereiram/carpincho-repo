@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cyber city 2-b.wav-741f8d0f30481eedcf402d65229badbc.sample"
+
+[deps]
+
+source_file="res://assets/music/cyberpunk city 2 files/Music/cyber city 2-b.wav"
+dest_files=[ "res://.import/cyber city 2-b.wav-741f8d0f30481eedcf402d65229badbc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

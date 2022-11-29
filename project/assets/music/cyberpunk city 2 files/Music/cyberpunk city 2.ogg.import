@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/cyberpunk city 2.ogg-0d303878640b28dcb13e13487d621441.oggstr"
+
+[deps]
+
+source_file="res://assets/music/cyberpunk city 2 files/Music/cyberpunk city 2.ogg"
+dest_files=[ "res://.import/cyberpunk city 2.ogg-0d303878640b28dcb13e13487d621441.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

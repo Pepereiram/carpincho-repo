@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/MiniLaserAttack3.wav-9f93736dcc80e1d439a13bb5f9705919.sample"
+
+[deps]
+
+source_file="res://assets/music/SFX2020/MiniLaserAttack3.wav"
+dest_files=[ "res://.import/MiniLaserAttack3.wav-9f93736dcc80e1d439a13bb5f9705919.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

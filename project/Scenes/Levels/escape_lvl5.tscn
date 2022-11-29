@@ -38,7 +38,7 @@ position = Vector2( 240, 96 )
 position = Vector2( 496, 192 )
 
 [node name="Box" parent="." instance=ExtResource( 2 )]
-position = Vector2( 368, 80 )
+position = Vector2( 365, 83 )
 
 [node name="Box2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 368, 112 )
@@ -48,6 +48,12 @@ position = Vector2( 400, 112 )
 
 [node name="Box4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 456, 208 )
+
+[node name="Box5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 159, 240 )
+
+[node name="Box6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 416, 241 )
 
 [node name="NewPlayer" parent="." instance=ExtResource( 1 )]
 position = Vector2( 240, 112 )
