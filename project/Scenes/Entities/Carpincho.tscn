@@ -724,14 +724,13 @@ script = ExtResource( 2 )
 texture = ExtResource( 1 )
 hframes = 9
 vframes = 9
-frame = 13
+frame = 9
 
 [node name="drone" type="Sprite" parent="Pivot"]
 position = Vector2( -6, 35 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 hframes = 4
-frame = 2
 
 [node name="explosion" type="Sprite" parent="Pivot"]
 position = Vector2( -5, 43 )

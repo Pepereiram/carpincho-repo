@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://menu/menu.gd" type="Script" id=1]
 [ext_resource path="res://menu/theme.tres" type="Theme" id=2]
 [ext_resource path="res://menu/ui/kenneyUI-blue.tres" type="Theme" id=3]
 [ext_resource path="res://menu/cyberpunk-street-files/PNG/layers/far-buildings.png" type="Texture" id=4]
 [ext_resource path="res://menu/ui/kenneyUI.tres" type="Theme" id=5]
+[ext_resource path="res://assets/music/Space Music Pack/menu.wav" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=3]
 
@@ -63,5 +64,10 @@ margin_right = 494.0
 margin_bottom = 141.251
 theme = ExtResource( 5 )
 text = "Exit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+bus = "BGM"
 
 [connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]

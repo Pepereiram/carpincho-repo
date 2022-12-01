@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://menu/ui/kenneyUI.tres" type="Theme" id=1]
 [ext_resource path="res://menu/ui/kenneyUI-blue.tres" type="Theme" id=2]
 [ext_resource path="res://menu/PauseMenu/PauseMenu.gd" type="Script" id=3]
 [ext_resource path="res://menu/cyberpunk-street-files/PNG/layers/far-buildings.png" type="Texture" id=4]
 [ext_resource path="res://assets/sprites/buttons/button UI.png" type="Texture" id=5]
+[ext_resource path="res://assets/music/Space Music Pack/menu.wav" type="AudioStream" id=6]
+[ext_resource path="res://menu/ui/kenneyUI-yellow.tres" type="Theme" id=7]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 5 )
@@ -24,27 +26,91 @@ region = Rect2( 64, 64, 16, 16 )
 
 [node name="PauseMenu" type="MarginContainer"]
 pause_mode = 2
-anchor_left = 1.0
-anchor_right = 1.0
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -218.0
+margin_left = -207.0
+margin_right = 207.0
 rect_pivot_offset = Vector2( -283, -93 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 18, 101 )
-scale = Vector2( 1.58594, 1.05729 )
+position = Vector2( 214, 144 )
+scale = Vector2( 2.30079, 1.53385 )
 texture = ExtResource( 4 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 218.0
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+bus = "BGM"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_top = 44.0
+margin_right = 414.0
+margin_bottom = 244.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource( 7 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 192.0
+margin_bottom = 200.0
+
+[node name="MasterV" type="Label" parent="HBoxContainer/VBoxContainer2"]
+margin_right = 192.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( -82, -94 )
+text = "Master Volume"
+
+[node name="MasterS" type="HSlider" parent="HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+margin_top = 22.0
+margin_right = 192.0
+margin_bottom = 64.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="MusicV" type="Label" parent="HBoxContainer/VBoxContainer2"]
+margin_top = 68.0
+margin_right = 192.0
+margin_bottom = 86.0
+text = "Music volume"
+
+[node name="MusicS" type="HSlider" parent="HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+margin_top = 90.0
+margin_right = 192.0
+margin_bottom = 132.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="SFXV" type="Label" parent="HBoxContainer/VBoxContainer2"]
+margin_top = 136.0
+margin_right = 192.0
+margin_bottom = 154.0
+text = "Sfx volume"
+
+[node name="sfxS" type="HSlider" parent="HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+margin_top = 158.0
+margin_right = 192.0
+margin_bottom = 200.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 196.0
+margin_right = 414.0
 margin_bottom = 199.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 3.21
 theme = ExtResource( 1 )
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
 margin_right = 218.0
 margin_bottom = 30.0
 theme = ExtResource( 2 )
@@ -53,7 +119,7 @@ align = 1
 valign = 1
 max_lines_visible = 10
 
-[node name="resume" type="Button" parent="VBoxContainer"]
+[node name="resume" type="Button" parent="HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 margin_top = 34.0
 margin_right = 218.0
@@ -63,7 +129,7 @@ theme = ExtResource( 1 )
 text = "Resume"
 icon = SubResource( 1 )
 
-[node name="restart" type="Button" parent="VBoxContainer"]
+[node name="restart" type="Button" parent="HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 margin_top = 78.0
 margin_right = 218.0
@@ -72,7 +138,7 @@ theme = ExtResource( 1 )
 text = "Restart"
 icon = SubResource( 2 )
 
-[node name="mainMenu" type="Button" parent="VBoxContainer"]
+[node name="mainMenu" type="Button" parent="HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 margin_top = 122.0
 margin_right = 218.0
@@ -80,7 +146,7 @@ margin_bottom = 162.251
 text = "Main Menu"
 icon = SubResource( 3 )
 
-[node name="exit" type="Button" parent="VBoxContainer"]
+[node name="exit" type="Button" parent="HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 margin_top = 166.0
 margin_right = 218.0
