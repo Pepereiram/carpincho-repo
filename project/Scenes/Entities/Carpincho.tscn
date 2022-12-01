@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://assets/sprites/capibara/charlieTheCapybaraAnimationSheet.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Entities/Carpincho.gd" type="Script" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://assets/sprites/Drones/1 Drones/3/Death.png" type="Texture" id=6]
 [ext_resource path="res://assets/sprites/explosions/spritesheets/explosion-3.png" type="Texture" id=7]
 [ext_resource path="res://assets/sprites/Drones/1 Drones/3/Fire1.png" type="Texture" id=8]
+[ext_resource path="res://assets/music/FreeSFX/GameSFX/Explosion/Retro Explosion Swoshes 04.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/music/FreeSFX/GameSFX/Descending/Retro Descending Short 14.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/music/FreeSFX/GameSFX/Impact/Retro Impact 20.wav" type="AudioStream" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 33, 30 )
@@ -756,3 +759,12 @@ tree_root = SubResource( 5 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 6 )
+
+[node name="Explosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="Falling" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="TakeDamage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )

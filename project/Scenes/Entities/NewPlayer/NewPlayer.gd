@@ -31,6 +31,7 @@ onready var power_part = $Pivot/direccionBala/Power
 var tip_attached = true 
 var grabbed = false
 var near_tip = true
+var pressed = false
 #inputs
 var right 
 var left 
@@ -39,6 +40,8 @@ var fire
 var back 
 var look_up
 var look_down
+#audio
+
 
 # <----- Set up ----->
 
@@ -124,8 +127,13 @@ func _process_primary_button():
 	if tip_attached or (near_tip and Tip.hooked):
 		#lanzamiento
 		if Input.is_action_pressed(fire):
+			if not pressed:
+				$Power.play()
+				pressed = true
 			potencia += 0.4 #cargando
 		if Input.is_action_just_released(fire):
+			$Power.stop()
+			pressed = false
 			shoot() #soltando
 	#TRAER DE VUELTA LA PUNTA		
 	else:
@@ -140,6 +148,7 @@ func _process_primary_button():
 func _process_secondary_button():
 	#SI ESTOY CERCA SE RECOGE LA PUNTA
 	if near_tip:
+		$Pickup.play()
 		disconnect_tip()
 	else:
 		#SI ESTOY LEJOS Y LA PUNTA ESTA ENGANCHADA, ENTONCES
@@ -157,6 +166,7 @@ func _process_secondary_button():
 #Jugador lanza la punta
 func shoot():
 	if tip_attached:
+		$Shoot.play()
 		tip_attached = false
 		#Tip.activate_collision()
 		Tip.get_node("cs").disabled = false
@@ -190,7 +200,7 @@ func disconnect_object():
 func gun_input():
 	#si se aprieta "q" la mira sube
 	if Input.is_action_pressed(look_up) and shoot_direction.position.x > 0.1 :
-		angle -= 0.1
+		angle -= 0.05
 		new_position.x = ratio * cos(angle) 
 		new_position.y = ratio * sin(angle) - 3
 		gun.rotation = angle 
@@ -198,7 +208,7 @@ func gun_input():
 
 	#si se aprieta "e" la mira baja
 	elif Input.is_action_pressed(look_down) and shoot_direction.position.y < 10 :
-		angle += 0.1
+		angle += 0.05
 		new_position.x = ratio * cos(angle) 
 		new_position.y = ratio * sin(angle) - 3
 		gun.rotation = angle 
