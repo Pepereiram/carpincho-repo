@@ -5,8 +5,9 @@ func _ready():
 	connect("body_exited",self,"on_body_exited")
 
 
-func on_body_entered(body: NewPlayer):
-	get_parent().add_player()
+func on_body_entered(body):
+	if body.has_method("gun_input"):
+		get_parent().add_player()
 	if  get_parent().players_in == 2:
 		get_parent().change_next_lvl()
 

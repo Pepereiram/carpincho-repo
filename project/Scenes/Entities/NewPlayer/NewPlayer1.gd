@@ -1,6 +1,7 @@
 class_name NewPlayer1
 extends "res://Scenes/Entities/NewPlayer/NewPlayer.gd"
 
+
 func _init():
 	#inputs
 	right = "move_right"
@@ -10,6 +11,4 @@ func _init():
 	back =  "soltar1"
 	look_up = "apuntar_arriba"
 	look_down = "apuntar_abajo"
-
-
 
