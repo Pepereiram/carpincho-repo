@@ -197,7 +197,7 @@ func gun_input():
 		arm.rotation = angle 
 
 	#si se aprieta "e" la mira baja
-	elif Input.is_action_pressed(look_down) and shoot_direction.position.y < 0.3 :
+	elif Input.is_action_pressed(look_down) and shoot_direction.position.y < 10 :
 		angle += 0.1
 		new_position.x = ratio * cos(angle) 
 		new_position.y = ratio * sin(angle) - 3
