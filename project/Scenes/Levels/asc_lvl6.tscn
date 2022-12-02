@@ -1,12 +1,27 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Levels/Tiles/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Props/death_zone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Props/Goal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/sprites/Industrial Assets/2 Background/6.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/Industrial Assets/2 Background/Background.png" type="Texture" id=7]
 
 [node name="asc_lvl6" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 257, 80 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="6" type="Sprite" parent="Background"]
+position = Vector2( 6, 250.5 )
+scale = Vector2( 1, 0.626543 )
+texture = ExtResource( 6 )
 
 [node name="Goal" parent="." instance=ExtResource( 5 )]
 position = Vector2( 11, 84 )

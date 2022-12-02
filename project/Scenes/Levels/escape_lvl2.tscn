@@ -30,15 +30,18 @@ __meta__ = {
 
 [node name="door" parent="." instance=ExtResource( 7 )]
 position = Vector2( 48, 128 )
+scale = Vector2( -1, 1 )
 
 [node name="door2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 496, 128 )
 
 [node name="final_door" parent="." instance=ExtResource( 9 )]
 position = Vector2( 304, 224 )
+scale = Vector2( -1, 1 )
 
 [node name="final_door2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 48, 224 )
+scale = Vector2( -1, 1 )
 
 [node name="Box" parent="." instance=ExtResource( 3 )]
 position = Vector2( 192, 144 )

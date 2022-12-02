@@ -1,11 +1,30 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Levels/Tiles/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Props/Goal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sprites/Industrial Assets/3 Objects/Ladder1.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/Industrial Assets/3 Objects/Ladder3.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/Industrial Assets/2 Background/Background.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/Industrial Assets/2 Background/6.png" type="Texture" id=8]
 
 [node name="asc_lvl1" type="Node2D"]
+
+[node name="background" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite" parent="background"]
+position = Vector2( 254, -70 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="6" type="Sprite" parent="background/Background"]
+position = Vector2( 6, 250.5 )
+scale = Vector2( 1, 0.626543 )
+texture = ExtResource( 8 )
 
 [node name="Goal" parent="." instance=ExtResource( 4 )]
 position = Vector2( 492, 82 )
@@ -19,13 +38,23 @@ cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
 show_collision = true
 compatibility_mode = true
 format = 1
-tile_data = PoolIntArray( -1, 4, 0, -65536, 4, 0, -65535, 4, 0, -65534, 4, 0, -65533, 4, 0, -65532, 4, 0, -65531, 4, 0, -65530, 4, 0, -65529, 4, 0, -65528, 4, 0, -65527, 4, 0, -65526, 4, 0, -65525, 4, 0, -65524, 4, 0, -65523, 4, 0, -65522, 4, 0, -65521, 4, 0, -65520, 4, 0, 65535, 4, 0, 15, 86, 0, 16, 4, 0, 131071, 4, 0, 65551, 86, 0, 65552, 4, 0, 196607, 4, 0, 131087, 86, 0, 131088, 4, 0, 262143, 4, 0, 196617, 4, 0, 196618, 4, 0, 196619, 4, 0, 196620, 4, 0, 196621, 4, 0, 196622, 4, 0, 196623, 4, 0, 196624, 4, 0, 327679, 4, 0, 262153, 4, 0, 262154, 4, 0, 262155, 4, 0, 262156, 4, 0, 262157, 4, 0, 262158, 4, 0, 262159, 4, 0, 262160, 4, 0, 393215, 4, 0, 327689, 4, 0, 327690, 4, 0, 327691, 4, 0, 327692, 4, 0, 327693, 4, 0, 327694, 4, 0, 327695, 4, 0, 327696, 4, 0, 458751, 4, 0, 393225, 4, 0, 393226, 4, 0, 393227, 4, 0, 393228, 4, 0, 393229, 4, 0, 393230, 4, 0, 393231, 4, 0, 393232, 4, 0, 524287, 4, 0, 458761, 4, 0, 458762, 4, 0, 458763, 4, 0, 458764, 4, 0, 458765, 4, 0, 458766, 4, 0, 458767, 4, 0, 458768, 4, 0, 589823, 4, 0, 524288, 4, 0, 524289, 4, 0, 524290, 4, 0, 524291, 4, 0, 524292, 4, 0, 524293, 4, 0, 524294, 4, 0, 524295, 4, 0, 524296, 4, 0, 524297, 4, 0, 524298, 4, 0, 524299, 4, 0, 524300, 4, 0, 524301, 4, 0, 524302, 4, 0, 524303, 4, 0, 524304, 4, 0 )
+tile_data = PoolIntArray( -65536, 14, 0, -65535, 4, 0, -65534, 4, 0, -65533, 4, 0, -65532, 4, 0, -65531, 4, 0, -65530, 4, 0, -65529, 4, 0, -65528, 4, 0, -65527, 4, 0, -65526, 4, 0, -65525, 4, 0, -65524, 4, 0, -65523, 4, 0, -65522, 4, 0, -65521, 4, 0, -65520, 4, 0, 0, 14, 0, 15, 86, 0, 16, 12, 0, 65536, 14, 0, 65551, 86, 0, 65552, 12, 0, 131072, 14, 0, 131081, 90, 0, 131082, 89, 0, 131083, 89, 0, 131084, 88, 0, 131087, 86, 0, 131088, 12, 0, 196608, 14, 0, 196617, 3, 0, 196618, 4, 0, 196619, 4, 0, 196620, 4, 0, 196621, 4, 0, 196622, 4, 0, 196623, 4, 0, 196624, 16, 0, 262144, 14, 0, 262153, 12, 0, 262154, 13, 0, 262155, 13, 0, 262156, 18, 0, 262157, 13, 0, 262158, 18, 0, 262159, 13, 0, 262160, 13, 0, 327680, 14, 0, 327689, 12, 0, 327690, 13, 0, 327691, 13, 0, 327692, 18, 0, 327693, 13, 0, 327694, 18, 0, 327695, 13, 0, 327696, 13, 0, 393216, 14, 0, 393225, 12, 0, 393226, 13, 0, 393227, 13, 0, 393228, 18, 0, 393229, 13, 0, 393230, 18, 0, 393231, 13, 0, 393232, 13, 0, 458752, 14, 0, 458755, 90, 0, 458756, 89, 0, 458757, 89, 0, 458758, 89, 0, 458759, 88, 0, 458761, 12, 0, 458762, 13, 0, 458763, 13, 0, 458764, 18, 0, 458765, 13, 0, 458766, 18, 0, 458767, 13, 0, 458768, 13, 0, 524288, 15, 0, 524289, 4, 0, 524290, 4, 0, 524291, 4, 0, 524292, 4, 0, 524293, 4, 0, 524294, 4, 0, 524295, 4, 0, 524296, 4, 0, 524297, 16, 0, 524298, 13, 0, 524299, 13, 0, 524300, 18, 0, 524301, 13, 0, 524302, 18, 0, 524303, 13, 0, 524304, 13, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="NewPlayer" parent="." instance=ExtResource( 2 )]
-position = Vector2( 77, 234 )
+position = Vector2( 107, 238 )
 
 [node name="pj2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 20, 239 )
+position = Vector2( 59, 240 )
+
+[node name="stairs" type="Node2D" parent="."]
+
+[node name="Ladder1" type="Sprite" parent="stairs"]
+position = Vector2( 81, 273 )
+texture = ExtResource( 5 )
+
+[node name="Ladder3" type="Sprite" parent="stairs"]
+position = Vector2( 81, 240 )
+texture = ExtResource( 6 )
