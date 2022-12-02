@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Levels/Tiles/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer1.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Scenes/Props/Goal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/sprites/Industrial Assets/2 Background/6.png" type="Texture" id=6]
 [ext_resource path="res://assets/sprites/Industrial Assets/2 Background/Background.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/Industrial Assets/3 Objects/Ladder1.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/Industrial Assets/3 Objects/Ladder3.png" type="Texture" id=9]
 
 [node name="asc_lvl4" type="Node2D"]
 
@@ -48,3 +50,14 @@ position = Vector2( 485, 236 )
 [node name="Goal" parent="." instance=ExtResource( 5 )]
 position = Vector2( 11, 50 )
 next_level = "res://Scenes/Levels/asc_lvl5.tscn"
+
+[node name="stairs" type="Node2D" parent="."]
+position = Vector2( 384, 1 )
+
+[node name="Ladder1" type="Sprite" parent="stairs"]
+position = Vector2( 81, 273 )
+texture = ExtResource( 8 )
+
+[node name="Ladder3" type="Sprite" parent="stairs"]
+position = Vector2( 81, 240 )
+texture = ExtResource( 9 )

@@ -1,16 +1,16 @@
 extends Sprite
 
+onready var anim_player = $AnimationPlayer
+onready var anim_tree = $AnimationTree
+onready var playback = anim_tree.get("parameters/playback")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	anim_tree.active = true	
+	
+func open():
+	playback.travel("open")
+
+func close():
+	playback.travel("close")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

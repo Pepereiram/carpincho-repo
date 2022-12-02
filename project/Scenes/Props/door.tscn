@@ -188,6 +188,7 @@ states/open/node = SubResource( 7 )
 states/open/position = Vector2( 464, 74 )
 transitions = [ "closed", "open", SubResource( 8 ), "open", "close", SubResource( 9 ), "close", "closed", SubResource( 10 ) ]
 start_node = "closed"
+graph_offset = Vector2( 0, 31.0996 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=12]
 
@@ -207,3 +208,5 @@ anims/open = SubResource( 4 )
 tree_root = SubResource( 11 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 12 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

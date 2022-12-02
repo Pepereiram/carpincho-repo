@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer2.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Scenes/Props/Goal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/sprites/Industrial Assets/2 Background/6.png" type="Texture" id=6]
 [ext_resource path="res://assets/sprites/Industrial Assets/2 Background/Background.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/Industrial Assets/3 Objects/Ladder1.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/Industrial Assets/3 Objects/Ladder3.png" type="Texture" id=9]
 
 [node name="asc_lvl8" type="Node2D"]
 
@@ -31,7 +33,7 @@ cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
 show_collision = true
 compatibility_mode = true
 format = 1
-tile_data = PoolIntArray( -1, 4, 0, -65536, 4, 0, -65535, 4, 0, -65534, 4, 0, -65533, 4, 0, -65532, 4, 0, -65531, 4, 0, -65530, 4, 0, -65529, 4, 0, -65528, 4, 0, -65527, 4, 0, -65526, 4, 0, -65525, 4, 0, -65524, 4, 0, -65523, 4, 0, -65522, 4, 0, -65521, 4, 0, -65520, 4, 0, 65535, 4, 0, 5, 4, 0, 7, 86, 0, 10, 4, 0, 16, 4, 0, 131071, 4, 0, 65543, 86, 0, 65552, 4, 0, 196607, 4, 0, 131079, 86, 0, 131088, 4, 0, 262143, 4, 0, 196614, 4, 0, 196615, 4, 0, 196616, 4, 0, 196617, 4, 0, 196624, 4, 0, 327679, 4, 0, 262160, 4, 0, 393215, 4, 0, 327680, 26, 0, 327681, 26, 0, 327694, 26, 0, 327695, 26, 0, 327696, 4, 0, 458751, 4, 0, 393232, 4, 0, 524287, 4, 0, 458768, 4, 0, 589823, 4, 0, 524295, 4, 0, 524296, 4, 0, 524304, 4, 0, 655359, 4, 0, 589831, 4, 0, 589832, 4, 0, 589840, 4, 0, 720895, 4, 0, 655360, 4, 0, 655361, 4, 0, 655362, 4, 0, 655363, 4, 0, 655364, 4, 0, 655365, 4, 0, 655366, 4, 0, 655367, 4, 0, 655368, 4, 0, 655369, 4, 0, 655370, 4, 0, 655371, 4, 0, 655372, 4, 0, 655373, 4, 0, 655374, 4, 0, 655375, 4, 0, 655376, 4, 0 )
+tile_data = PoolIntArray( -1, 14, 0, -65536, 22, 0, -65535, 22, 0, -65534, 22, 0, -65533, 22, 0, -65532, 22, 0, -65531, 22, 0, -65530, 22, 0, -65529, 22, 0, -65528, 22, 0, -65527, 22, 0, -65526, 22, 0, -65525, 22, 0, -65524, 22, 0, -65523, 22, 0, -65522, 22, 0, -65521, 22, 0, -65520, 12, 0, 65535, 14, 0, 5, 22, 0, 7, 86, 0, 10, 22, 0, 16, 12, 0, 131071, 14, 0, 65543, 86, 0, 65552, 12, 0, 196607, 14, 0, 131079, 86, 0, 131088, 12, 0, 262143, 14, 0, 196614, 4, 0, 196615, 4, 0, 196616, 4, 0, 196617, 4, 0, 196624, 12, 0, 327679, 14, 0, 262160, 12, 0, 393215, 14, 0, 327680, 26, 0, 327681, 26, 0, 327694, 26, 0, 327695, 26, 0, 327696, 12, 0, 458751, 14, 0, 393232, 12, 0, 524287, 14, 0, 458768, 12, 0, 589823, 14, 0, 524295, 3, 0, 524296, 5, 0, 524304, 12, 0, 655359, 14, 0, 589831, 12, 0, 589832, 14, 0, 589840, 12, 0, 720895, 14, 0, 655360, 4, 0, 655361, 4, 0, 655362, 4, 0, 655363, 4, 0, 655364, 4, 0, 655365, 4, 0, 655366, 4, 0, 655367, 4, 0, 655368, 4, 0, 655369, 4, 0, 655370, 4, 0, 655371, 4, 0, 655372, 4, 0, 655373, 4, 0, 655374, 4, 0, 655375, 4, 0, 655376, 4, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -48,3 +50,15 @@ position = Vector2( -2, 308 )
 [node name="Goal" parent="." instance=ExtResource( 5 )]
 position = Vector2( 232, 80 )
 next_level = "res://Scenes/Levels/boss_lvl1.tscn"
+
+[node name="stairs" type="Node2D" parent="."]
+position = Vector2( 336, 0 )
+scale = Vector2( -1, 1 )
+
+[node name="Ladder1" type="Sprite" parent="stairs"]
+position = Vector2( 81, 273 )
+texture = ExtResource( 8 )
+
+[node name="Ladder3" type="Sprite" parent="stairs"]
+position = Vector2( 81, 240 )
+texture = ExtResource( 9 )
