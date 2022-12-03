@@ -148,7 +148,8 @@ func _process_primary_button():
 func _process_secondary_button():
 	#SI ESTOY CERCA SE RECOGE LA PUNTA
 	if near_tip:
-		$Pickup.play()
+		if not tip_attached:
+			$Pickup.play()
 		disconnect_tip()
 	else:
 		#SI ESTOY LEJOS Y LA PUNTA ESTA ENGANCHADA, ENTONCES
