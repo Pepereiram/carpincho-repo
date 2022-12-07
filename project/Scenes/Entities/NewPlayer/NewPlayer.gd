@@ -26,12 +26,18 @@ var potencia = 5
 var new_position = Vector2(ratio, -3)
 onready var gun = $Pivot/gun
 onready var arm = $Pivot/arm
+onready var body = $Pivot/Body
 onready var power_part = $Pivot/direccionBala/Power
 #states
 var tip_attached = true 
 var grabbed = false
 var near_tip = true
 var pressed = false
+#Sprites
+#var body
+#var arm
+#var 
+
 #inputs
 var right 
 var left 
@@ -191,11 +197,13 @@ func disconnect_tip():
 	Tip.get_node("cs").disabled = true
 	Tip.get_node("Sprite").hide()#devuelve valores por defecto
 	tip_attached = true #si la punta esta cerca jugador la recoge
-
+	print(Tip.grabbed_object)
 
 func disconnect_object():
 	Tip.hooked = false
 	Tip.hb.grabbed = false 
+	Tip.grabbed_object.delete_outline()
+	Tip.grabbed_object = null
 	Tip.hb.set_physics_process(true)
 
 func gun_input():
@@ -227,3 +235,19 @@ func velocity_vector():
 	
 func set_near(value):
 	near_tip = value
+
+#OUTLINE
+func red_outline():
+	arm.red_outline()
+	body.red_outline()
+	gun.red_outline()
+	
+func blue_outline():
+	arm.blue_outline()
+	body.blue_outline()
+	gun.blue_outline()
+	
+func delete_outline():
+	arm.delete_outline()
+	body.delete_outline()
+	gun.delete_outline()

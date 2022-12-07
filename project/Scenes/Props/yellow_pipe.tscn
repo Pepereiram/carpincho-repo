@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://yellow_pipe.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/Industrial Assets/JACindustrialpack/prop pack.png" type="Texture" id=2]
+[ext_resource path="res://shaders/Sprite_shaders.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6, 8 )
@@ -16,7 +17,8 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 hframes = 9
 vframes = 12
-frame = 3
+frame = 7
+script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

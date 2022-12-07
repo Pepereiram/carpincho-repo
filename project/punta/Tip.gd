@@ -15,7 +15,8 @@ var attached_normal = Vector2.ZERO
 #collision layer
 var player_layer
 var tip_layer
-
+#collision body
+var grabbed_object = null
 
 # <----- Set up ----->
 
@@ -46,6 +47,8 @@ func _on_impact(collision):
 	
 	if layer == player_layer or layer == 32 and !hooked: #choque objeto "agarrable"
 		#deactivate_collision()
+		grabbed_object = object_touched
+		object_touched.blue_outline()
 		attached_normal = normal
 		attach_pj(object_touched)
 
