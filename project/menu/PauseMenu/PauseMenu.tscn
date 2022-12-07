@@ -41,7 +41,6 @@ texture = ExtResource( 4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-autoplay = true
 bus = "BGM"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]

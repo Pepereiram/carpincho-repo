@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var hp = 3
-export var speed = 10
+export var speed = 150
 var acceleration = 50
 var velocity = Vector2()
 var direction = 1
@@ -38,10 +38,8 @@ func _physics_process(_delta):
 	if velocity.x == 0:
 		playback.travel("idle")
 	elif velocity.x > 0:
-		print("derecha")
 		playback.travel("move_right")
 	else:
-		print("izquierda")
 		playback.travel("move_left")
 
 
