@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/tilemapTest.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Props/blue_pipe.tscn" type="PackedScene" id=2]
@@ -12,6 +12,26 @@
 [ext_resource path="res://assets/sprites/Industrial Assets/2 Background/1.png" type="Texture" id=10]
 [ext_resource path="res://menu/PauseMenu/PauseMenu.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Music/EscapeLevelMusic.tscn" type="PackedScene" id=12]
+[ext_resource path="res://menu/ui/kenneyUI-yellow.tres" type="Theme" id=13]
+[ext_resource path="res://assets/sprites/cyberpunk char/banner-a3.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/buttons/gdb-keyboard-2.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/Levels/Tutorial/Move2.gd" type="Script" id=16]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 15 )
+region = Rect2( 96, 80, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 15 )
+region = Rect2( 112, 80, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 15 )
+region = Rect2( 192, 80, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 15 )
+region = Rect2( 208, 80, 16, 16 )
 
 [node name="escape_lvl2" type="Node2D"]
 script = ExtResource( 8 )
@@ -44,6 +64,77 @@ scale = Vector2( -1, 1 )
 [node name="final_door2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 48, 224 )
 scale = Vector2( -1, 1 )
+
+[node name="bckgr_obj" type="Node2D" parent="."]
+
+[node name="Banner-a3" type="Sprite" parent="bckgr_obj"]
+position = Vector2( 402, 63 )
+scale = Vector2( 1, -1 )
+texture = ExtResource( 14 )
+
+[node name="Banner-a4" type="Sprite" parent="bckgr_obj"]
+position = Vector2( 148, 62 )
+scale = Vector2( 1, -1 )
+texture = ExtResource( 14 )
+
+[node name="Move1" type="Label" parent="bckgr_obj"]
+self_modulate = Color( 1, 0, 0, 1 )
+margin_left = 116.0
+margin_top = 47.0
+margin_right = 244.0
+margin_bottom = 129.0
+rect_scale = Vector2( 0.5, 0.5 )
+theme = ExtResource( 13 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = 0
+custom_constants/shadow_as_outline = 0
+text = "PRESS  c
+to fire
+press v
+to release"
+align = 1
+valign = 1
+
+[node name="C" type="Sprite" parent="bckgr_obj/Move1"]
+position = Vector2( 102, 14 )
+scale = Vector2( 1.2, 1.2 )
+texture = SubResource( 1 )
+
+[node name="V" type="Sprite" parent="bckgr_obj/Move1"]
+position = Vector2( 102, 50 )
+scale = Vector2( 1.2, 1.2 )
+texture = SubResource( 2 )
+
+[node name="Move2" type="Label" parent="bckgr_obj"]
+self_modulate = Color( 1, 0, 0, 1 )
+margin_left = 369.0
+margin_top = 47.0
+margin_right = 501.0
+margin_bottom = 131.0
+rect_scale = Vector2( 0.5, 0.5 )
+theme = ExtResource( 13 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = 0
+custom_constants/shadow_as_outline = 0
+text = "press c
+to fire
+press v
+to release"
+align = 1
+valign = 1
+script = ExtResource( 16 )
+
+[node name="dot" type="Sprite" parent="bckgr_obj/Move2"]
+position = Vector2( 102, 16 )
+scale = Vector2( 1.2, 1.2 )
+texture = SubResource( 3 )
+
+[node name="slash" type="Sprite" parent="bckgr_obj/Move2"]
+position = Vector2( 102, 52 )
+scale = Vector2( 1.2, 1.2 )
+texture = SubResource( 4 )
 
 [node name="Box" parent="." instance=ExtResource( 3 )]
 position = Vector2( 192, 144 )
