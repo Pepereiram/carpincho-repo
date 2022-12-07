@@ -10,6 +10,7 @@ var grabbed = false
 var on_air = false
 #sprite
 onready var sprite = $Sprite
+#
 
 func _process(delta):
 	if grabbed:

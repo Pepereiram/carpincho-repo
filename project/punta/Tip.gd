@@ -45,12 +45,17 @@ func _on_impact(collision):
 	var normal = collision.normal
 	var layer = object_touched.get_collision_layer()
 	
+	
 	if layer == player_layer or layer == 32 and !hooked: #choque objeto "agarrable"
 		#deactivate_collision()
-		grabbed_object = object_touched
-		object_touched.blue_outline()
-		attached_normal = normal
-		attach_pj(object_touched)
+		if !object_touched.grabbed:
+			grabbed_object = object_touched
+			object_touched.blue_outline()
+			attached_normal = normal
+			attach_pj(object_touched)
+		else:
+			velocity = velocity.bounce(normal)
+			velocity *= 0.5 + rand_range(-0.05, 0.05)
 
 	else: #choque paredes
 		velocity = velocity.bounce(normal)

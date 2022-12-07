@@ -10,7 +10,8 @@ func _ready():
 func on_body_entered(body: NewPlayer):
 	players_in+=1
 	if players_in == 2:
-		get_tree().change_scene(next_level)
+		Fade.change_scene(next_level)
+		#get_tree().change_scene(next_level)
 
 func on_body_exited(body: NewPlayer):
 	players_in-=1

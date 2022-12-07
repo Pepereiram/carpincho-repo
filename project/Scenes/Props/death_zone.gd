@@ -7,4 +7,5 @@ func _ready():
 
 func on_body_entered(body: Node):
 	if body.has_method("set_near"):
-		get_tree().reload_current_scene()
+		body.set_physics_process(false)
+		Fade.reload_scene()

@@ -53,6 +53,10 @@ _global_script_class_icons={
 config/name="Carpincho"
 run/main_scene="res://menu/Mainmenu.tscn"
 
+[autoload]
+
+Fade="*res://transitions/fade.tscn"
+
 [display]
 
 window/size/width=544

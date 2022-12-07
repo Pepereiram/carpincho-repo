@@ -13,7 +13,8 @@ func change_next_lvl():
 	get_node("NewPlayer").set_physics_process(false)
 	get_node("pj2").set_physics_process(false)
 	yield(get_tree().create_timer(1.0), "timeout")
-	get_tree().change_scene(next_level)
+	Fade.change_scene(next_level)
+	#get_tree().change_scene(next_level)
 
 func add_player():
 	players_in += 1

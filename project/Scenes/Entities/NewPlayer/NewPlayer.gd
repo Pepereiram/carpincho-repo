@@ -27,7 +27,7 @@ var new_position = Vector2(ratio, -3)
 onready var gun = $Pivot/gun
 onready var arm = $Pivot/arm
 onready var body = $Pivot/Body
-onready var power_part = $Pivot/direccionBala/Power
+#onready var power_part = $Pivot/direccionBala/Power
 #states
 var tip_attached = true 
 var grabbed = false
@@ -197,7 +197,7 @@ func disconnect_tip():
 	Tip.get_node("cs").disabled = true
 	Tip.get_node("Sprite").hide()#devuelve valores por defecto
 	tip_attached = true #si la punta esta cerca jugador la recoge
-	print(Tip.grabbed_object)
+
 
 func disconnect_object():
 	Tip.hooked = false
