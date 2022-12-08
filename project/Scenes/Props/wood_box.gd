@@ -17,12 +17,12 @@ func _process(delta):
 		grabbed_physics(delta)
 		
 func _physics_process(delta):
-	move_and_slide(velocity, Vector2.UP , false, 4, PI/4, false)
 	velocity.y += GRAVITY * delta
-	if is_on_floor():
-		velocity.y = 0
-		velocity.x = 0
-		
+	var collision = move_and_collide(velocity * delta, false)
+	if collision != null:
+		_on_impact(collision)	
+
+
 func grabbed_physics(delta):
 	velocity.y += GRAVITY * delta
 	var collision = move_and_collide(velocity * delta, false)

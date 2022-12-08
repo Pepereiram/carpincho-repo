@@ -1,9 +1,9 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scenes/tilemapTest.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Props/blue_pipe.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Props/wood_box.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Props/yellow_pipe.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sprites/Industrial Assets/3 Objects/Locker4.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Props/door.tscn" type="PackedScene" id=7]
@@ -16,6 +16,9 @@
 [ext_resource path="res://assets/sprites/cyberpunk char/banner-a3.png" type="Texture" id=14]
 [ext_resource path="res://assets/sprites/buttons/gdb-keyboard-2.png" type="Texture" id=15]
 [ext_resource path="res://Scenes/Levels/Tutorial/Move2.gd" type="Script" id=16]
+[ext_resource path="res://assets/sprites/Industrial Assets/3 Objects/Locker3.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/Industrial Assets/3 Objects/Mop.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/Industrial Assets/3 Objects/Bucket.png" type="Texture" id=20]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 15 )
@@ -42,6 +45,9 @@ modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 272, 143 )
 scale = Vector2( 0.944444, 0.895062 )
 texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
 show_collision = true
@@ -139,11 +145,8 @@ texture = SubResource( 4 )
 [node name="Box" parent="." instance=ExtResource( 3 )]
 position = Vector2( 192, 144 )
 
-[node name="Box2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 240, 240 )
-
 [node name="Box4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 224, 120 )
+position = Vector2( 224, 112 )
 
 [node name="Box3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 224, 144 )
@@ -152,43 +155,36 @@ position = Vector2( 224, 144 )
 position = Vector2( 160, 144 )
 
 [node name="Box6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 160, 120 )
-
-[node name="Box7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 208, 240 )
-
-[node name="yellow_pipe" parent="." instance=ExtResource( 4 )]
-position = Vector2( 472, 240 )
-
-[node name="yellow_pipe2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 496, 240 )
-
-[node name="yellow_pipe3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 448, 240 )
+position = Vector2( 160, 112 )
 
 [node name="blue_pipe" parent="." instance=ExtResource( 2 )]
 position = Vector2( 384, 144 )
 
+[node name="blue_pipe3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 328, 144 )
+
 [node name="blue_pipe2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 354, 144 )
 
-[node name="blue_pipe3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 304, 144 )
-
 [node name="blue_pipe4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 329, 144 )
+position = Vector2( 368, 104 )
 
 [node name="blue_pipe5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 368, 112 )
-
-[node name="blue_pipe6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 342, 112 )
+position = Vector2( 336, 104 )
 
 [node name="pj2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 496, 144 )
 
 [node name="NewPlayer" parent="." instance=ExtResource( 5 )]
 position = Vector2( 48, 144 )
+
+[node name="Bucket" type="Sprite" parent="."]
+position = Vector2( 220, 238 )
+texture = ExtResource( 20 )
+
+[node name="Mop" type="Sprite" parent="."]
+position = Vector2( 248, 238 )
+texture = ExtResource( 19 )
 
 [node name="PauseMenu" parent="." instance=ExtResource( 11 )]
 visible = false
@@ -198,3 +194,15 @@ margin_right = 464.0
 margin_bottom = 199.0
 
 [node name="EscapeLevelMusic" parent="." instance=ExtResource( 12 )]
+
+[node name="Locker3" type="Sprite" parent="."]
+position = Vector2( 112, 240 )
+texture = ExtResource( 17 )
+
+[node name="Locker4" type="Sprite" parent="."]
+position = Vector2( 464, 240 )
+texture = ExtResource( 4 )
+
+[node name="Locker5" type="Sprite" parent="."]
+position = Vector2( 496, 240 )
+texture = ExtResource( 4 )

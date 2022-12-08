@@ -37,13 +37,15 @@ func _on_resume_pressed():
 
 func _on_restart_pressed():
 	bgm.stop()
-	get_tree().reload_current_scene()
+	Fade.reload_scene()
+	#get_tree().reload_current_scene()
 	get_tree().paused = false
 	
 func _on_main_menu_pressed():
 	bgm.stop()
 	get_tree().paused = false
-	get_tree().change_scene("res://menu/Mainmenu.tscn")
+	Fade.change_scene("res://menu/Mainmenu.tscn")
+	#get_tree().change_scene("res://menu/Mainmenu.tscn")
 	
 func _on_exit_pressed():
 	get_tree().quit()

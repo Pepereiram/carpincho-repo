@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/sprites/Industrial Assets/JACindustrialpack/new_box.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Props/wood_box.gd" type="Script" id=2]
 [ext_resource path="res://shaders/Sprite_shaders.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Props/death_zone.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2.77778, 2.77778 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 2.65, 0.2 )
 
 [node name="Box" type="KinematicBody2D"]
 scale = Vector2( 5, 5 )
@@ -20,8 +24,17 @@ texture = ExtResource( 1 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 6
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 2.8 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 2 )
