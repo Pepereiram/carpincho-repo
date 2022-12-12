@@ -38,6 +38,11 @@ _global_script_classes=[ {
 "class": "Tip2",
 "language": "GDScript",
 "path": "res://punta/Tip2.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "throwable",
+"language": "GDScript",
+"path": "res://Scenes/Props/wood_box.gd"
 } ]
 _global_script_class_icons={
 "NewPlayer": "",
@@ -45,7 +50,8 @@ _global_script_class_icons={
 "NewPlayer2": "",
 "Tip": "",
 "Tip1": "",
-"Tip2": ""
+"Tip2": "",
+"throwable": ""
 }
 
 [application]

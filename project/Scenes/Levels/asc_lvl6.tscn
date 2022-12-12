@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Levels/Tiles/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer2.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://assets/sprites/Industrial Assets/2 Background/Background.png" type="Texture" id=7]
 [ext_resource path="res://assets/sprites/Industrial Assets/3 Objects/Ladder1.png" type="Texture" id=8]
 [ext_resource path="res://assets/sprites/Industrial Assets/3 Objects/Ladder3.png" type="Texture" id=9]
+[ext_resource path="res://menu/PauseMenu/PauseMenu.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Music/AscendLevelMusic.tscn" type="PackedScene" id=11]
 
 [node name="asc_lvl6" type="Node2D"]
 
@@ -61,3 +63,12 @@ texture = ExtResource( 8 )
 [node name="Ladder3" type="Sprite" parent="stairs"]
 position = Vector2( 81, 240 )
 texture = ExtResource( 9 )
+
+[node name="AscendLevelMusic" parent="." instance=ExtResource( 11 )]
+
+[node name="PauseMenu" parent="." instance=ExtResource( 10 )]
+visible = false
+margin_left = 52.0
+margin_top = -1.0
+margin_right = 466.0
+margin_bottom = 199.0

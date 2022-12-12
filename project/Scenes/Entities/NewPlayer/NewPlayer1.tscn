@@ -313,6 +313,7 @@ tracks/2/keys = {
 resource_name = "run"
 length = 0.5
 loop = true
+step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pivot/Body:frame")
 tracks/0/interp = 1
@@ -376,12 +377,8 @@ tracks/4/keys = {
 "end_offset": 0.0,
 "start_offset": 0.0,
 "stream": ExtResource( 7 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 7 )
 } ],
-"times": PoolRealArray( 0, 0.2, 0.4 )
+"times": PoolRealArray( 0.15, 0.4 )
 }
 
 [sub_resource type="AnimationNodeAnimation" id=27]

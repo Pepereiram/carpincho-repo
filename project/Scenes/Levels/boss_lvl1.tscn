@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Levels/Tiles/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer1.tscn" type="PackedScene" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://assets/sprites/Industrial Assets/2 Background/Background.png" type="Texture" id=5]
 [ext_resource path="res://menu/PauseMenu/PauseMenu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Music/BossLevelMusic.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Props/acid.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Props/death_zone.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Props/proyectileB.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Props/wood_box.tscn" type="PackedScene" id=11]
 
 [node name="boss_lvl1" type="Node2D"]
 
@@ -24,10 +28,10 @@ __meta__ = {
 }
 
 [node name="NewPlayer" parent="." instance=ExtResource( 2 )]
-position = Vector2( 80, 232 )
+position = Vector2( 147, 207 )
 
 [node name="pj2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 433, 235 )
+position = Vector2( 370, 206 )
 
 [node name="Carpincho" parent="." instance=ExtResource( 4 )]
 position = Vector2( 264, 48 )
@@ -46,3 +50,53 @@ margin_right = 472.0
 margin_bottom = 199.0
 
 [node name="BossLevelMusic" parent="." instance=ExtResource( 7 )]
+
+[node name="leftAcid" type="Node2D" parent="."]
+
+[node name="acid" parent="leftAcid" instance=ExtResource( 8 )]
+position = Vector2( 40, 248 )
+
+[node name="acid2" parent="leftAcid" instance=ExtResource( 8 )]
+position = Vector2( 56, 248 )
+
+[node name="acid3" parent="leftAcid" instance=ExtResource( 8 )]
+position = Vector2( 72, 248 )
+
+[node name="acid4" parent="leftAcid" instance=ExtResource( 8 )]
+position = Vector2( 88, 248 )
+
+[node name="acid5" parent="leftAcid" instance=ExtResource( 8 )]
+position = Vector2( 104, 248 )
+
+[node name="acid6" parent="leftAcid" instance=ExtResource( 8 )]
+position = Vector2( 120, 248 )
+
+[node name="rightAcid" type="Node2D" parent="."]
+position = Vector2( 352, 0 )
+
+[node name="acid" parent="rightAcid" instance=ExtResource( 8 )]
+position = Vector2( 40, 248 )
+
+[node name="acid2" parent="rightAcid" instance=ExtResource( 8 )]
+position = Vector2( 56, 248 )
+
+[node name="acid3" parent="rightAcid" instance=ExtResource( 8 )]
+position = Vector2( 72, 248 )
+
+[node name="acid4" parent="rightAcid" instance=ExtResource( 8 )]
+position = Vector2( 88, 248 )
+
+[node name="acid5" parent="rightAcid" instance=ExtResource( 8 )]
+position = Vector2( 104, 248 )
+
+[node name="acid6" parent="rightAcid" instance=ExtResource( 8 )]
+position = Vector2( 120, 248 )
+
+[node name="death_zone" parent="." instance=ExtResource( 9 )]
+position = Vector2( 16, 249 )
+
+[node name="ProyectileB" parent="." instance=ExtResource( 10 )]
+position = Vector2( 259, 118 )
+
+[node name="Box" parent="." instance=ExtResource( 11 )]
+position = Vector2( 306, 122 )

@@ -170,6 +170,9 @@ func _process_secondary_button():
 
 # <----- Rod functionalities ----->
 
+func player_death():
+	playback.travel("death")
+
 #Jugador lanza la punta
 func shoot():
 	if tip_attached:

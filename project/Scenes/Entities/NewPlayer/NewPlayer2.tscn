@@ -313,6 +313,7 @@ tracks/3/keys = {
 resource_name = "run"
 length = 0.5
 loop = true
+step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pivot/Body:frame")
 tracks/0/interp = 1
@@ -360,6 +361,24 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 7, -7 ) ]
+}
+tracks/4/type = "audio"
+tracks/4/path = NodePath("Footsteps")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+} ],
+"times": PoolRealArray( 0.15, 0.4 )
 }
 
 [sub_resource type="AnimationNodeAnimation" id=35]

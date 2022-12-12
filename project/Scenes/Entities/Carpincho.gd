@@ -60,10 +60,9 @@ func _fire():
 	get_parent().add_child(projectile)
 	projectile.global_position = projectile_spawn.global_position
 	randomize()
-	print(self.global_position.x)
 	if self.global_position.x < 150:
 		projectile.rotation = rand_range(PI/6,PI/3)
-	elif self.global_position.x < 350:
+	elif self.global_position.x > 350:
 		projectile.rotation = rand_range(4*PI/6,5*PI/6)
 	else:
 		projectile.rotation = rand_range(PI/6,2*PI/3)

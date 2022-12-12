@@ -1,3 +1,4 @@
+class_name throwable
 extends KinematicBody2D
 
 #variables
