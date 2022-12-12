@@ -36,7 +36,7 @@ texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 margin_right = 494.0
-margin_bottom = 30.0
+margin_bottom = 27.0
 theme = ExtResource( 3 )
 text = "Carpunkcho 77"
 align = 1
@@ -44,24 +44,24 @@ valign = 1
 max_lines_visible = 10
 
 [node name="play" type="Button" parent="VBoxContainer"]
-margin_top = 34.0
+margin_top = 31.0
 margin_right = 494.0
-margin_bottom = 67.251
+margin_bottom = 73.251
 rect_pivot_offset = Vector2( -236, -27 )
 theme = ExtResource( 5 )
 text = "Play"
 
 [node name="tutorial" type="Button" parent="VBoxContainer"]
-margin_top = 71.0
+margin_top = 77.0
 margin_right = 494.0
-margin_bottom = 104.251
+margin_bottom = 119.251
 theme = ExtResource( 5 )
 text = "Practice"
 
 [node name="exit" type="Button" parent="VBoxContainer"]
-margin_top = 108.0
+margin_top = 123.0
 margin_right = 494.0
-margin_bottom = 141.251
+margin_bottom = 165.251
 theme = ExtResource( 5 )
 text = "Exit"
 

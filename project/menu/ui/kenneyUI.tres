@@ -4,7 +4,6 @@
 [ext_resource path="res://menu/ui/kenvector_future.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=23]
-size = 8
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
@@ -181,7 +180,6 @@ texture = ExtResource( 1 )
 region_rect = Rect2( 1051, 317, 4, 100 )
 
 [resource]
-default_font = SubResource( 23 )
 Button/colors/font_color = Color( 0, 0, 0, 1 )
 Button/colors/font_color_disabled = Color( 1, 1, 1, 0.2 )
 Button/colors/font_color_hover = Color( 0.34902, 0.34902, 0.34902, 1 )

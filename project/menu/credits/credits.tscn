@@ -1,0 +1,80 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://menu/ui/kenneyUI.tres" type="Theme" id=1]
+[ext_resource path="res://menu/credits/credits.gd" type="Script" id=2]
+
+[node name="Credits" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 186.0
+margin_right = 358.0
+margin_bottom = 288.0
+size_flags_horizontal = 4
+scroll_horizontal_enabled = false
+
+[node name="CreditsContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 172.0
+margin_bottom = 98.0
+size_flags_horizontal = 6
+theme = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_right = 172.0
+margin_bottom = 9.0
+theme_type_variation = "BigLabel"
+text = "Credits"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 13.0
+margin_right = 172.0
+margin_bottom = 17.0
+
+[node name="Label2" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 21.0
+margin_right = 172.0
+margin_bottom = 30.0
+text = "ASSETS"
+align = 1
+
+[node name="HSeparator2" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 34.0
+margin_right = 172.0
+margin_bottom = 38.0
+
+[node name="Label3" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 42.0
+margin_right = 172.0
+margin_bottom = 51.0
+text = "GUNNER - ANIMATED CHARACTER"
+align = 1
+
+[node name="Label4" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 55.0
+margin_right = 172.0
+margin_bottom = 64.0
+text = "secrethideout.itch.io"
+align = 1
+
+[node name="HSeparator3" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 68.0
+margin_right = 172.0
+margin_bottom = 72.0
+theme_type_variation = "SmallHSeparator"
+
+[node name="Label6" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 76.0
+margin_right = 172.0
+margin_bottom = 85.0
+text = "quaver"
+align = 1
+
+[node name="Label5" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 89.0
+margin_right = 172.0
+margin_bottom = 98.0
+text = "caffinate.itch.io"
+align = 1
