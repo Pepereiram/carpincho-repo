@@ -1,14 +1,10 @@
 extends Area2D
 
-
-var velocity = Vector2()
-var GRAVITY = 500
-var SPEED = 200
-
-func _ready():
-	pass
+var SPEED = 150
 	
 func _physics_process(delta):
-	velocity.x += 200
-	velocity.y += GRAVITY*delta
-	pass
+	position += SPEED * transform.x * delta
+
+
+func _on_ProjectileA_body_entered(body):
+	queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://assets/sprites/capibara/charlieTheCapybaraAnimationSheet.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Entities/Carpincho.gd" type="Script" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://assets/music/FreeSFX/GameSFX/Explosion/Retro Explosion Swoshes 04.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/music/FreeSFX/GameSFX/Descending/Retro Descending Short 14.wav" type="AudioStream" id=10]
 [ext_resource path="res://assets/music/FreeSFX/GameSFX/Impact/Retro Impact 20.wav" type="AudioStream" id=11]
+[ext_resource path="res://Scenes/Props/projectileA.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Props/proyectileB.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 33, 30 )
@@ -817,6 +819,8 @@ start_node = "idle"
 collision_layer = 64
 collision_mask = 33
 script = ExtResource( 2 )
+ProjectileA = ExtResource( 12 )
+ProjectileB = ExtResource( 13 )
 
 [node name="Pivot" type="Node2D" parent="."]
 
@@ -838,7 +842,7 @@ texture = ExtResource( 7 )
 hframes = 10
 vframes = 9
 
-[node name="spawn" type="Position2D" parent="Pivot"]
+[node name="ProjSpawn" type="Position2D" parent="Pivot"]
 position = Vector2( 9, 51 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -872,5 +876,8 @@ stream = ExtResource( 11 )
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="ShootTimer" type="Timer" parent="."]
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
