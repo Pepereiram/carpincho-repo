@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Levels/Tiles/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Entities/NewPlayer/NewPlayer1.tscn" type="PackedScene" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://Scenes/Props/acid.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Props/death_zone.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Props/proyectileB.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Props/wood_box.tscn" type="PackedScene" id=11]
 
 [node name="boss_lvl1" type="Node2D"]
 
@@ -31,7 +30,7 @@ __meta__ = {
 position = Vector2( 147, 207 )
 
 [node name="pj2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 370, 206 )
+position = Vector2( 469, -52 )
 
 [node name="Carpincho" parent="." instance=ExtResource( 4 )]
 position = Vector2( 264, 48 )
@@ -41,13 +40,6 @@ position = Vector2( 264, 48 )
 [node name="Background" type="Sprite" parent="ParallaxBackground"]
 position = Vector2( 280, 136 )
 texture = ExtResource( 5 )
-
-[node name="PauseMenu" parent="." instance=ExtResource( 6 )]
-visible = false
-margin_left = 58.0
-margin_top = -1.0
-margin_right = 472.0
-margin_bottom = 199.0
 
 [node name="BossLevelMusic" parent="." instance=ExtResource( 7 )]
 
@@ -98,5 +90,15 @@ position = Vector2( 16, 249 )
 [node name="ProyectileB" parent="." instance=ExtResource( 10 )]
 position = Vector2( 259, 118 )
 
-[node name="Box" parent="." instance=ExtResource( 11 )]
-position = Vector2( 306, 122 )
+[node name="ProyectileB2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 437, 148 )
+
+[node name="ProyectileB3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 81, 164 )
+
+[node name="PauseMenu" parent="." instance=ExtResource( 6 )]
+visible = false
+margin_left = 58.0
+margin_top = -1.0
+margin_right = 472.0
+margin_bottom = 210.0

@@ -29,6 +29,7 @@ func _physics_process(_delta):
 		velocity.x = 0
 	else:
 		velocity = move_and_slide(velocity)
+		#velocity = move_and_collide(velocity)
 		velocity.x = move_toward(velocity.x, direction*speed, acceleration)
 		if is_on_wall():
 			direction = direction * -1
@@ -49,12 +50,15 @@ func _physics_process(_delta):
 			elif velocity.x < -10:
 				playback.travel("move_left")
 
+#take damage
+func _takeDamage():
+	hp -=1
 
 #death
 func _death():
 	playback.travel("explosion")
 	
-
+#Attack
 func _fire():
 	var projectile = ProjectileA.instance()
 	get_parent().add_child(projectile)
@@ -67,18 +71,11 @@ func _fire():
 	else:
 		projectile.rotation = rand_range(PI/6,2*PI/3)
 
-
 func _on_Timer_timeout():
 	#el carpunkcho ataca
 	shooting = true
 	shootTimer.start(1.5)
 	playback.travel("attack_1")
-	
-
-
-func _on_AnimationPlayer_animation_finished(anim_name):
-	pass # Replace with function body.
-
 
 func _on_ShootTimer_timeout():
 	_fire()
