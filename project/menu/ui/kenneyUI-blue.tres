@@ -6,7 +6,7 @@
 font_path = "res://menu/ui/kenvector_future.ttf"
 
 [sub_resource type="DynamicFont" id=31]
-size = 24
+size = 20
 use_mipmaps = true
 use_filter = true
 font_data = SubResource( 32 )
