@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://assets/sprites/cyberpunk char/1 Biker/Biker_run.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/cyberpunk char/1 Biker/anim2cafe.png" type="Texture" id=1]
+[ext_resource path="res://menu/credits/dancing_animation.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/cyberpunk char/1 Biker/Biker_climb.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -26,7 +28,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 1 ]
+"values": [ 3 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("BikerRun:frame")
@@ -40,25 +42,99 @@ tracks/2/keys = {
 "update": 0,
 "values": [ 0 ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("BikerRun:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("BikerRun:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 6, 0 ) ]
+}
 
 [sub_resource type="Animation" id=2]
-resource_name = "jump"
-
-[sub_resource type="Animation" id=3]
-resource_name = "lol"
-length = 0.6
+resource_name = "jump_owo"
+length = 0.7
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("BikerRun:hframes")
+tracks/0/path = NodePath("BikerRun:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BikerRun:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.0160771 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BikerRun:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 6 ]
+"values": [ ExtResource( 3 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("BikerRun:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 8, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "run"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("BikerRun:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 6, 7, 8, 9, 10, 11, 5 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("BikerRun:vframes")
@@ -70,38 +146,122 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 1 ]
+"values": [ 3 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("BikerRun:frame")
+tracks/2/path = NodePath("BikerRun:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 5 ]
+"values": [ ExtResource( 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("BikerRun:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=4]
 resource_name = "stop"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("BikerRun:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 12, 13, 14, 15 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BikerRun:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BikerRun:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
 
 [sub_resource type="AnimationNodeAnimation" id=5]
+animation = "jump_owo"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "run"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "stop"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachine" id=11]
+states/jump_owo/node = SubResource( 5 )
+states/jump_owo/position = Vector2( 513.667, 160.333 )
+states/run/node = SubResource( 6 )
+states/run/position = Vector2( 399, 66.5062 )
+states/stop/node = SubResource( 7 )
+states/stop/position = Vector2( 616.333, 67.4444 )
+transitions = [ "jump_owo", "run", SubResource( 8 ), "stop", "jump_owo", SubResource( 10 ), "run", "stop", SubResource( 13 ) ]
+start_node = "run"
+graph_offset = Vector2( 0, 30.1843 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
 
 [node name="dancing_animation2" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="BikerRun" type="Sprite" parent="."]
-texture = ExtResource( 1 )
+position = Vector2( 6, 0 )
+texture = ExtResource( 3 )
 hframes = 6
+vframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )
-anims/jump = SubResource( 2 )
-anims/lol = SubResource( 3 )
+anims/jump_owo = SubResource( 2 )
+anims/run = SubResource( 3 )
 anims/stop = SubResource( 4 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 5 )
+tree_root = SubResource( 11 )
 anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 12 )
+
+[node name="Timer" type="Timer" parent="."]

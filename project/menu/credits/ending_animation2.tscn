@@ -1,16 +1,16 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/sprites/Industrial Assets/2 Background/Background.png" type="Texture" id=1]
+[ext_resource path="res://menu/cyberpunk-street-files/PNG/layers/far-buildings.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Levels/Tiles/tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://menu/credits/dancing_animation1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://menu/credits/dancing_animation2.tscn" type="PackedScene" id=4]
-[ext_resource path="res://menu/credits/p_anim1.gd" type="Script" id=5]
+[ext_resource path="res://menu/credits/p_anim2.gd" type="Script" id=5]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Background" type="Sprite" parent="."]
-position = Vector2( 233, -14 )
-scale = Vector2( 1.21528, 1.57716 )
+[node name="Far-buildings" type="Sprite" parent="."]
+position = Vector2( 284, 100 )
+scale = Vector2( 2.25586, 1.54167 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -25,7 +25,7 @@ cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
 show_collision = true
 compatibility_mode = true
 format = 1
-tile_data = PoolIntArray( 196608, 4, 0, 196609, 4, 0, 196610, 4, 0, 196611, 4, 0, 196612, 4, 0, 196613, 4, 0, 196614, 4, 0, 196615, 4, 0, 196616, 4, 0, 262144, 13, 0, 262145, 13, 0, 262146, 13, 0, 262147, 13, 0, 262148, 13, 0, 262149, 13, 0, 262150, 13, 0, 262151, 13, 0, 262152, 13, 0 )
+tile_data = PoolIntArray( 196608, 70, 0, 196609, 70, 0, 196610, 70, 0, 196611, 70, 0, 196612, 70, 0, 196613, 70, 0, 196614, 70, 0, 196615, 70, 0, 196616, 70, 0, 262144, 47, 0, 262145, 47, 0, 262146, 47, 0, 262147, 47, 0, 262148, 47, 0, 262149, 47, 0, 262150, 47, 0, 262151, 47, 0, 262152, 47, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
