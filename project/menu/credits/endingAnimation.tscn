@@ -31,11 +31,11 @@ __meta__ = {
 }
 
 [node name="dancing_animation1" parent="." instance=ExtResource( 3 )]
-position = Vector2( 10, 148 )
+position = Vector2( -20, 148 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 5 )
 
 [node name="dancing_animation2" parent="." instance=ExtResource( 4 )]
-position = Vector2( -55, 147 )
+position = Vector2( -85, 147 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 5 )
