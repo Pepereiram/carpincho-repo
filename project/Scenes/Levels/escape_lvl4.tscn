@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/tilemapTest.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Props/wood_box.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://assets/sprites/Industrial Assets/2 Background/1.png" type="Texture" id=10]
 [ext_resource path="res://menu/PauseMenu/PauseMenu.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Music/EscapeLevelMusic.tscn" type="PackedScene" id=12]
+[ext_resource path="res://menu/LevelMenu.tscn" type="PackedScene" id=13]
 
 [node name="escape_lvl4" type="Node2D"]
 script = ExtResource( 7 )
@@ -98,3 +99,6 @@ margin_right = 470.0
 margin_bottom = 200.0
 
 [node name="EscapeLevelMusic" parent="." instance=ExtResource( 12 )]
+
+[node name="LevelMenu" parent="." instance=ExtResource( 13 )]
+visible = false
