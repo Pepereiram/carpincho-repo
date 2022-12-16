@@ -927,6 +927,10 @@ stream = ExtResource( 11 )
 
 [node name="ShootTimer" type="Timer" parent="."]
 
+[node name="deathTime" type="Timer" parent="."]
+wait_time = 2.0
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
+[connection signal="timeout" from="deathTime" to="." method="_on_deathTime_timeout"]

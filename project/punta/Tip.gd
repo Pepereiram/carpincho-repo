@@ -45,7 +45,6 @@ func _on_impact(collision):
 	var normal = collision.normal
 	var layer = object_touched.get_collision_layer()
 	
-	
 	if layer == player_layer or layer == 32 and !hooked: #choque objeto "agarrable"
 		#deactivate_collision()
 		if !object_touched.grabbed:

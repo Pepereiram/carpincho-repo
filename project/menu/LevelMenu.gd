@@ -18,6 +18,8 @@ onready var Asc8 = $"%Asc8"
 #Boss Levels
 onready var Boss0 =$"%Boss0"
 onready var Boss1 =$"%Boss1"
+#credits
+onready var credits = $"%credits"
 
 func _ready():
 	hide()
@@ -90,3 +92,8 @@ func _on_Boss0_pressed():
 func _on_Boss1_pressed():
 	get_tree().paused = false
 	Fade.change_scene("res://Scenes/Levels/boss_lvl1.tscn")
+
+#credits
+func _on_credits_pressed():
+	get_tree().paused = false
+	Fade.change_scene("res://menu/credits/endingAnimation.tscn")

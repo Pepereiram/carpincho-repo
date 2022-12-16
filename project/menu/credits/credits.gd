@@ -28,5 +28,5 @@ func _physics_process(delta):
 func _to_main_menu():
 	if not scroll_ended:
 		scroll_ended = true
-		yield(get_tree().create_timer(2), "timeout")
+		yield(get_tree().create_timer(6), "timeout")
 		get_tree().change_scene("res://menu/Mainmenu.tscn")

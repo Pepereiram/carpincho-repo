@@ -52,6 +52,7 @@ var look_down
 # <----- Set up ----->
 
 func _ready():
+	var parent = get_parent()
 	anim_tree.active = true
 	#Tip.deactivate_collision()
 	Tip.get_node("cs").disabled = true

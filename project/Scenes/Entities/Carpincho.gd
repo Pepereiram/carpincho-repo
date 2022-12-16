@@ -15,8 +15,9 @@ export(PackedScene) var ProjectileB
 onready var projectile_spawn = $Pivot/ProjSpawn
 onready var timer = $Timer
 onready var shootTimer = $ShootTimer
+onready var deathTime = $deathTime
 var shooting = false
-
+var dying = false
 
 
 func _ready():
@@ -26,6 +27,8 @@ func _ready():
 #aqui le metemos el arbol de animaciones 
 func _physics_process(_delta):
 	if shooting:
+		velocity.x = 0
+	elif dying:
 		velocity.x = 0
 	else:
 		velocity = move_and_slide(velocity)
@@ -53,10 +56,12 @@ func _physics_process(_delta):
 #take damage
 func _takeDamage():
 	hp -=1
-
 #death
-func _death():
+func death():
+	dying = true
 	playback.travel("explosion")
+	#yield(deathTime.start(),"timeout")
+	Fade.change_scene("res://menu/credits/endingAnimation.tscn")
 	
 #Attack
 func _fire():
@@ -80,3 +85,7 @@ func _on_Timer_timeout():
 func _on_ShootTimer_timeout():
 	_fire()
 	shooting = false
+
+
+func _on_deathTime_timeout():
+	pass

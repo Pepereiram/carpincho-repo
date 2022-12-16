@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://menu/ui/kenneyUI-blue.tres" type="Theme" id=1]
 [ext_resource path="res://menu/cyberpunk-street-files/PNG/layers/far-buildings.png" type="Texture" id=2]
 [ext_resource path="res://menu/credits/credits.gd" type="Script" id=3]
+[ext_resource path="res://assets/music/FreeSFX/GameSFX/Music/ChipWave/Retro Music - ABMU - ChipWave 01.wav" type="AudioStream" id=4]
 
 [node name="MarginContainer" type="MarginContainer"]
 anchor_right = 1.0
@@ -21,346 +22,569 @@ margin_bottom = 288.0
 [node name="CreditsContainer" type="VBoxContainer" parent="ScrollContainer"]
 margin_left = 1.0
 margin_right = 531.0
-margin_bottom = 1093.0
+margin_bottom = 2380.0
 size_flags_horizontal = 6
 size_flags_stretch_ratio = 0.0
 theme = ExtResource( 1 )
+custom_constants/separation = 2
+
+[node name="Empty1" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_right = 530.0
+margin_bottom = 127.0
+text = "
+
+
+
+"
 
 [node name="Credits" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 129.0
 margin_right = 530.0
-margin_bottom = 23.0
-text = "CREDITS"
+margin_bottom = 152.0
+custom_colors/font_color = Color( 0.25098, 0.0431373, 0.239216, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_y = 2
+custom_constants/shadow_as_outline = 0
+text = "Carpunkcho"
 align = 1
 
-[node name="first_Separator" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
-margin_top = 27.0
+[node name="Empty2" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 154.0
 margin_right = 530.0
-margin_bottom = 31.0
+margin_bottom = 281.0
+text = "
+
+
+
+"
+
+[node name="first_Separator" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 283.0
+margin_right = 530.0
+margin_bottom = 283.0
+custom_constants/separation = 0
 
 [node name="Credits2" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 35.0
+margin_top = 285.0
 margin_right = 530.0
-margin_bottom = 58.0
+margin_bottom = 308.0
 text = "DIRECTION"
 align = 1
 
 [node name="first_Separator2" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
-margin_top = 62.0
+margin_top = 310.0
 margin_right = 530.0
-margin_bottom = 66.0
+margin_bottom = 314.0
 
 [node name="Credits3" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 70.0
+margin_top = 316.0
 margin_right = 530.0
-margin_bottom = 93.0
+margin_bottom = 339.0
 text = "Alejandra nose"
 align = 1
 
 [node name="Credits4" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 97.0
+margin_top = 341.0
 margin_right = 530.0
-margin_bottom = 120.0
+margin_bottom = 364.0
 text = "Jose Pereira"
 align = 1
 
 [node name="Credits5" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 124.0
+margin_top = 366.0
 margin_right = 530.0
-margin_bottom = 147.0
+margin_bottom = 389.0
 text = "Tomas Araya"
 align = 1
 
 [node name="first_Separator3" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
-margin_top = 151.0
+margin_top = 391.0
 margin_right = 530.0
-margin_bottom = 155.0
+margin_bottom = 395.0
+
+[node name="Empty3" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 397.0
+margin_right = 530.0
+margin_bottom = 524.0
+text = "
+
+
+
+"
+
+[node name="first_Separator5" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 526.0
+margin_right = 530.0
+margin_bottom = 530.0
 
 [node name="Credits6" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 159.0
+margin_top = 532.0
 margin_right = 530.0
-margin_bottom = 182.0
+margin_bottom = 555.0
 text = "PROGRAMERS"
 align = 1
 
 [node name="first_Separator4" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
-margin_top = 186.0
+margin_top = 557.0
 margin_right = 530.0
-margin_bottom = 190.0
+margin_bottom = 561.0
 
 [node name="Credits7" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 194.0
+margin_top = 563.0
 margin_right = 530.0
-margin_bottom = 217.0
+margin_bottom = 586.0
 text = "Jose Pereira"
 align = 1
 
 [node name="Credits8" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 221.0
+margin_top = 588.0
 margin_right = 530.0
-margin_bottom = 244.0
+margin_bottom = 611.0
 text = "Tomas Araya"
 align = 1
 
-[node name="HSeparator2" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
-margin_top = 248.0
+[node name="HSeparator6" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 613.0
 margin_right = 530.0
-margin_bottom = 252.0
+margin_bottom = 617.0
+
+[node name="Empty4" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 619.0
+margin_right = 530.0
+margin_bottom = 746.0
+text = "
+
+
+
+"
+
+[node name="HSeparator2" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 748.0
+margin_right = 530.0
+margin_bottom = 752.0
 
 [node name="Music" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 256.0
+margin_top = 754.0
 margin_right = 530.0
-margin_bottom = 279.0
+margin_bottom = 777.0
 text = "MUSIC"
 align = 1
 
 [node name="HSeparator3" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
-margin_top = 283.0
+margin_top = 779.0
 margin_right = 530.0
-margin_bottom = 287.0
+margin_bottom = 783.0
 
 [node name="Music2" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 291.0
+margin_top = 785.0
 margin_right = 530.0
-margin_bottom = 314.0
+margin_bottom = 808.0
 text = "Space Music Pack"
 align = 1
 
 [node name="Music3" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 318.0
+margin_top = 810.0
 margin_right = 530.0
-margin_bottom = 341.0
+margin_bottom = 833.0
 text = "Goose Ninja"
 align = 1
 
-[node name="HSeparator4" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
-margin_top = 345.0
+[node name="HSeparator7" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 835.0
 margin_right = 530.0
-margin_bottom = 349.0
+margin_bottom = 839.0
+
+[node name="Empty5" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 841.0
+margin_right = 530.0
+margin_bottom = 968.0
+text = "
+
+
+
+"
+
+[node name="HSeparator4" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 970.0
+margin_right = 530.0
+margin_bottom = 974.0
 
 [node name="sfx" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 353.0
+margin_top = 976.0
 margin_right = 530.0
-margin_bottom = 376.0
+margin_bottom = 999.0
 text = "SFX"
 align = 1
 
 [node name="HSeparator5" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
-margin_top = 380.0
+margin_top = 1001.0
 margin_right = 530.0
-margin_bottom = 384.0
+margin_bottom = 1005.0
 
 [node name="Music5" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 388.0
+margin_top = 1007.0
 margin_right = 530.0
-margin_bottom = 411.0
+margin_bottom = 1030.0
 text = "200 Free SFX"
 align = 1
 
 [node name="Music6" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 415.0
+margin_top = 1032.0
 margin_right = 530.0
-margin_bottom = 438.0
+margin_bottom = 1055.0
 text = "Kronbits"
 align = 1
 
-[node name="HSeparator" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
-margin_top = 442.0
+[node name="HSeparator8" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1057.0
 margin_right = 530.0
-margin_bottom = 446.0
+margin_bottom = 1061.0
+
+[node name="Empty6" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1063.0
+margin_right = 530.0
+margin_bottom = 1190.0
+text = "
+
+
+
+"
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1192.0
+margin_right = 530.0
+margin_bottom = 1196.0
 
 [node name="assets" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 450.0
+margin_top = 1198.0
 margin_right = 530.0
-margin_bottom = 473.0
+margin_bottom = 1221.0
 text = "ASSETS"
 align = 1
 
 [node name="Assets1" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
-margin_top = 477.0
+margin_top = 1223.0
 margin_right = 530.0
-margin_bottom = 481.0
+margin_bottom = 1227.0
 
 [node name="Label3" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 485.0
+margin_top = 1229.0
 margin_right = 530.0
-margin_bottom = 508.0
+margin_bottom = 1252.0
 text = "Free Guns for Cyberpunk Characters"
 align = 1
 
 [node name="Label4" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 512.0
+margin_top = 1254.0
 margin_right = 530.0
-margin_bottom = 535.0
+margin_bottom = 1277.0
 text = "craftpix"
 align = 1
 
-[node name="Assets2" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
-margin_top = 539.0
+[node name="Assets12" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1279.0
 margin_right = 530.0
-margin_bottom = 543.0
+margin_bottom = 1283.0
+
+[node name="MiniEmpty" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1285.0
+margin_right = 530.0
+margin_bottom = 1308.0
+
+[node name="Assets2" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1310.0
+margin_right = 530.0
+margin_bottom = 1314.0
 
 [node name="Label5" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 547.0
+margin_top = 1316.0
 margin_right = 530.0
-margin_bottom = 570.0
+margin_bottom = 1339.0
 text = "Free 3 Cyberpunk Sprites Pixel Art"
 align = 1
 
 [node name="Label6" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 574.0
+margin_top = 1341.0
 margin_right = 530.0
-margin_bottom = 597.0
+margin_bottom = 1364.0
 text = "craftpix"
 align = 1
 
-[node name="Assets3" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
-margin_top = 601.0
+[node name="Assets13" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1366.0
 margin_right = 530.0
-margin_bottom = 605.0
+margin_bottom = 1370.0
+
+[node name="MiniEmpty2" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1372.0
+margin_right = 530.0
+margin_bottom = 1395.0
+
+[node name="Assets3" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1397.0
+margin_right = 530.0
+margin_bottom = 1401.0
 
 [node name="Label7" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 609.0
+margin_top = 1403.0
 margin_right = 530.0
-margin_bottom = 632.0
+margin_bottom = 1426.0
 text = "Free Industrial Zone Tileset"
 align = 1
 
 [node name="Label8" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 636.0
+margin_top = 1428.0
 margin_right = 530.0
-margin_bottom = 659.0
+margin_bottom = 1451.0
 text = "craftpix"
 align = 1
 
-[node name="Assets4" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
-margin_top = 663.0
+[node name="Assets14" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1453.0
 margin_right = 530.0
-margin_bottom = 667.0
+margin_bottom = 1457.0
+
+[node name="MiniEmpty3" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1459.0
+margin_right = 530.0
+margin_bottom = 1482.0
+
+[node name="Assets4" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1484.0
+margin_right = 530.0
+margin_bottom = 1488.0
 
 [node name="Label9" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 671.0
+margin_top = 1490.0
 margin_right = 530.0
-margin_bottom = 694.0
+margin_bottom = 1513.0
 text = "2D Platformer Tileset - Laboratory"
 align = 1
 
 [node name="Label10" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 698.0
+margin_top = 1515.0
 margin_right = 530.0
-margin_bottom = 721.0
+margin_bottom = 1538.0
 text = "ExceptRea"
 align = 1
 
-[node name="Assets5" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
-margin_top = 725.0
+[node name="Assets15" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1540.0
 margin_right = 530.0
-margin_bottom = 729.0
+margin_bottom = 1544.0
+
+[node name="MiniEmpty4" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1546.0
+margin_right = 530.0
+margin_bottom = 1569.0
+
+[node name="Assets5" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1571.0
+margin_right = 530.0
+margin_bottom = 1575.0
 
 [node name="Label11" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 733.0
+margin_top = 1577.0
 margin_right = 530.0
-margin_bottom = 756.0
+margin_bottom = 1600.0
 text = "Warped City 2"
 align = 1
 
 [node name="Label12" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 760.0
+margin_top = 1602.0
 margin_right = 530.0
-margin_bottom = 783.0
+margin_bottom = 1625.0
 text = "	ansimuz"
 align = 1
 
-[node name="Assets6" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
-margin_top = 787.0
+[node name="Assets16" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1627.0
 margin_right = 530.0
-margin_bottom = 791.0
+margin_bottom = 1631.0
+
+[node name="MiniEmpty5" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1633.0
+margin_right = 530.0
+margin_bottom = 1656.0
+
+[node name="Assets6" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1658.0
+margin_right = 530.0
+margin_bottom = 1662.0
 
 [node name="Label13" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 795.0
+margin_top = 1664.0
 margin_right = 530.0
-margin_bottom = 818.0
+margin_bottom = 1687.0
 text = "FREE GAME ITEMS PACK 2"
 align = 1
 
 [node name="Label14" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 822.0
+margin_top = 1689.0
 margin_right = 530.0
-margin_bottom = 845.0
+margin_bottom = 1712.0
 text = "AhNinniah"
 align = 1
 
-[node name="Assets7" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
-margin_top = 849.0
+[node name="Assets17" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1714.0
 margin_right = 530.0
-margin_bottom = 853.0
+margin_bottom = 1718.0
+
+[node name="MiniEmpty6" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1720.0
+margin_right = 530.0
+margin_bottom = 1743.0
+
+[node name="Assets7" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1745.0
+margin_right = 530.0
+margin_bottom = 1749.0
 
 [node name="Label15" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 857.0
+margin_top = 1751.0
 margin_right = 530.0
-margin_bottom = 880.0
+margin_bottom = 1774.0
 text = "Critters - Lazy River Tileset"
 align = 1
 
 [node name="Label16" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 884.0
+margin_top = 1776.0
 margin_right = 530.0
-margin_bottom = 907.0
+margin_bottom = 1799.0
 text = " FoozleCC"
 align = 1
 
-[node name="Assets8" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
-margin_top = 911.0
+[node name="Assets18" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1801.0
 margin_right = 530.0
-margin_bottom = 915.0
+margin_bottom = 1805.0
+
+[node name="MiniEmpty7" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1807.0
+margin_right = 530.0
+margin_bottom = 1830.0
+
+[node name="Assets8" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1832.0
+margin_right = 530.0
+margin_bottom = 1836.0
 
 [node name="Label17" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 919.0
+margin_top = 1838.0
 margin_right = 530.0
-margin_bottom = 942.0
+margin_bottom = 1861.0
 text = "Charlie The Capybara"
 align = 1
 
 [node name="Label18" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 946.0
+margin_top = 1863.0
 margin_right = 530.0
-margin_bottom = 969.0
+margin_bottom = 1886.0
 text = "niffirgGames"
 align = 1
 
-[node name="Assets9" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
-margin_top = 973.0
+[node name="Assets19" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1888.0
 margin_right = 530.0
-margin_bottom = 977.0
+margin_bottom = 1892.0
+
+[node name="MiniEmpty8" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1894.0
+margin_right = 530.0
+margin_bottom = 1917.0
+
+[node name="Assets9" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1919.0
+margin_right = 530.0
+margin_bottom = 1923.0
 
 [node name="Label19" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 981.0
+margin_top = 1925.0
 margin_right = 530.0
-margin_bottom = 1004.0
+margin_bottom = 1948.0
 text = "UI Buttons"
 align = 1
 
 [node name="Label20" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 1008.0
+margin_top = 1950.0
 margin_right = 530.0
-margin_bottom = 1031.0
+margin_bottom = 1973.0
 text = "Kicked-in-Teeth"
 align = 1
 
-[node name="Assets10" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
-margin_top = 1035.0
+[node name="Assets20" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1975.0
 margin_right = 530.0
-margin_bottom = 1039.0
+margin_bottom = 1979.0
+
+[node name="MiniEmpty9" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 1981.0
+margin_right = 530.0
+margin_bottom = 2004.0
+
+[node name="Assets10" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 2006.0
+margin_right = 530.0
+margin_bottom = 2010.0
 
 [node name="Label21" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 1043.0
+margin_top = 2012.0
 margin_right = 530.0
-margin_bottom = 1066.0
+margin_bottom = 2035.0
 text = "Kenneys-ui-theme"
 align = 1
 
 [node name="Label22" type="Label" parent="ScrollContainer/CreditsContainer"]
-margin_top = 1070.0
+margin_top = 2037.0
 margin_right = 530.0
-margin_bottom = 1093.0
+margin_bottom = 2060.0
 text = "azagaya"
 align = 1
+
+[node name="Assets21" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 2062.0
+margin_right = 530.0
+margin_bottom = 2066.0
+
+[node name="MiniEmpty10" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 2068.0
+margin_right = 530.0
+margin_bottom = 2091.0
+
+[node name="Assets11" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 2093.0
+margin_right = 530.0
+margin_bottom = 2097.0
+
+[node name="Empty7" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 2099.0
+margin_right = 530.0
+margin_bottom = 2226.0
+text = "
+
+
+
+"
+
+[node name="theEnd" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 2228.0
+margin_right = 530.0
+margin_bottom = 2251.0
+text = "the end"
+align = 1
+
+[node name="Empty8" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 2253.0
+margin_right = 530.0
+margin_bottom = 2380.0
+text = "
+
+
+
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+bus = "BGM"
