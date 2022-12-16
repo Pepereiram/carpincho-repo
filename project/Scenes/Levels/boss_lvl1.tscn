@@ -9,10 +9,11 @@
 [ext_resource path="res://Scenes/Music/BossLevelMusic.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Props/acid.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Props/death_zone.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Props/proyectileB.tscn" type="PackedScene" id=10]
 [ext_resource path="res://menu/LevelMenu.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Levels/boss_lvl1.gd" type="Script" id=12]
 
 [node name="boss_lvl1" type="Node2D"]
+script = ExtResource( 12 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -31,7 +32,7 @@ __meta__ = {
 position = Vector2( 147, 207 )
 
 [node name="pj2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 469, -52 )
+position = Vector2( 368, 207 )
 
 [node name="Carpincho" parent="." instance=ExtResource( 4 )]
 position = Vector2( 264, 48 )
@@ -88,15 +89,6 @@ position = Vector2( 120, 248 )
 [node name="death_zone" parent="." instance=ExtResource( 9 )]
 position = Vector2( 16, 249 )
 
-[node name="ProyectileB" parent="." instance=ExtResource( 10 )]
-position = Vector2( 259, 118 )
-
-[node name="ProyectileB2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 437, 148 )
-
-[node name="ProyectileB3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 81, 164 )
-
 [node name="PauseMenu" parent="." instance=ExtResource( 6 )]
 visible = false
 margin_left = 58.0
@@ -106,3 +98,8 @@ margin_bottom = 210.0
 
 [node name="LevelMenu" parent="." instance=ExtResource( 11 )]
 visible = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

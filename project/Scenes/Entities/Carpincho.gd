@@ -13,14 +13,16 @@ onready var playback = anim_tree.get("parameters/playback")
 export(PackedScene) var ProjectileA
 export(PackedScene) var ProjectileB
 onready var projectile_spawn = $Pivot/ProjSpawn
+onready var projectileB_spawn = $Pivot/projBspawn
 onready var timer = $Timer
 onready var shootTimer = $ShootTimer
-onready var deathTime = $deathTime
+onready var timer2 = $Timer2
 var shooting = false
 var dying = false
 
 
 func _ready():
+	timer2.start()
 	#activar arbol de animacion
 	anim_tree.active = true
 
@@ -61,7 +63,7 @@ func death():
 	dying = true
 	playback.travel("explosion")
 	#yield(deathTime.start(),"timeout")
-	Fade.change_scene("res://menu/credits/endingAnimation.tscn")
+	#Fade.change_scene("res://menu/credits/endingAnimation.tscn")
 	
 #Attack
 func _fire():
@@ -75,6 +77,11 @@ func _fire():
 		projectile.rotation = rand_range(4*PI/6,5*PI/6)
 	else:
 		projectile.rotation = rand_range(PI/6,2*PI/3)
+	
+func _fire2():
+	var projectile = ProjectileB.instance()
+	get_parent().add_child(projectile)
+	projectile.global_position = projectileB_spawn.global_position
 
 func _on_Timer_timeout():
 	#el carpunkcho ataca
@@ -86,6 +93,6 @@ func _on_ShootTimer_timeout():
 	_fire()
 	shooting = false
 
-
-func _on_deathTime_timeout():
-	pass
+func _on_Timer2_timeout():
+	_fire2()
+	shooting = true
