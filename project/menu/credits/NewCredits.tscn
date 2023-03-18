@@ -45,7 +45,7 @@ custom_colors/font_color = Color( 0.25098, 0.0431373, 0.239216, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_y = 2
 custom_constants/shadow_as_outline = 0
-text = "Carpunkcho"
+text = "Carpunkcho77"
 align = 1
 
 [node name="Empty2" type="Label" parent="ScrollContainer/CreditsContainer"]
@@ -80,7 +80,7 @@ margin_bottom = 314.0
 margin_top = 316.0
 margin_right = 530.0
 margin_bottom = 339.0
-text = "Alejandra nose"
+text = "Alejandra Toro"
 align = 1
 
 [node name="Credits4" type="Label" parent="ScrollContainer/CreditsContainer"]

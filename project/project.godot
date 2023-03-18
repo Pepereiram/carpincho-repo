@@ -62,7 +62,6 @@ run/main_scene="res://menu/Mainmenu.tscn"
 [autoload]
 
 Fade="*res://transitions/fade.tscn"
-LevelMenu="*res://menu/LevelMenu.tscn"
 
 [display]
 
